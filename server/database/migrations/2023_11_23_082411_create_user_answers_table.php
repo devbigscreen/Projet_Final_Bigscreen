@@ -16,9 +16,12 @@ class CreateUserAnswersTable extends Migration
         Schema::create('user_answers', function (Blueprint $table) {
             $table->unsignedBigInteger('answer_id');
             $table->unsignedBigInteger('question_id');
-            $table->varchar('user_id');
+            $table->string('user_id');
             $table->text('answers');
             $table->timestamps();
+
+            $table->foreign('question_id')->references('question_id')->on('questions');
+            $table->foreign('user_id')->references('user_id')->on('user_url');
         });
     }
 
