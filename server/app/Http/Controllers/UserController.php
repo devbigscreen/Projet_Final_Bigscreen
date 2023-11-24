@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-
+use App\Models\user_answers;
+use Illuminate\Http\JsonResponse;
 
 
 class UserController extends Controller
@@ -18,11 +19,11 @@ class UserController extends Controller
     
         {
 
-            $user = new user;
-            $user->answer_id = $request->input('answer_id');
-            $user->question_id = $request->input('question_id');
-            $user->user_id = $request->input('user_id');
-            $user->answers = $request->input('answers');
+            $addUser = new addUser;
+            $addUser->answer_id = $request->input('answer_id');
+            $addUser->question_id = $request->input('question_id');
+            $addUser->user_id = $request->input('user_id');
+            $addUser->answers = $request->input('answers');
     
             $request->validate([
                 'answer_id' => 'required',
@@ -31,11 +32,11 @@ class UserController extends Controller
                 'answers' => 'required'
             ]);
     
-            $user->save();
+            $addUser->save();
     
             return response()->json([
                 'message' => 'New user add succesfully !',
-                'data' => $user,
+                'data' => $addUser,
             ]);
             
         }
@@ -50,7 +51,6 @@ class UserController extends Controller
      */
     public function getAllUserAnswers()
     {
-
         $userAnswers = userAnswers::all();
         return response()->json([
             'message' => 'User to recover!',

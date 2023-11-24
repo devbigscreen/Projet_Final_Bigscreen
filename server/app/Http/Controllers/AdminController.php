@@ -25,14 +25,14 @@ class AdminController extends Controller
 
         if (!Auth::attempt($credentials)) {
             return response()->json([
-                'message' => 'Échec de l\'authentification',
+                'message' => 'Authentication failed',
             ], 401);
         }
 
         $admin = User::where('email', $request->email)->first();
         $token = $admin->createToken("token")->plainTextToken;
         return response()->json([
-            'message' => 'Authentification réussie',
+            'message' => 'Successfully Authentication',
             'token' => $token
         ]);
     }
@@ -47,14 +47,15 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $admin = new user;
+        $admin = new admin;
         $admin->email= $request->input('email');
         $admin->password = $request->input('password');
 
         $admin->password = Hash::make($request->input('password'));
         $admin->save();
         return response()->json([
-            'message' => 'Administrateur correctement ajouté'
+            'message' => 'Administrator successfully added'
         ]);
     }
+
 }
