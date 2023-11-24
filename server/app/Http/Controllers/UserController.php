@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
+
+
+
 
 class UserController extends Controller
 {
@@ -11,10 +15,12 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function addUser()
-    {
-        //
-    }
+    public function addUser(Request $request)
+    
+        {
+       //
+        }
+    
 
     /**
      * Display the specified resource.
@@ -26,6 +32,8 @@ class UserController extends Controller
     {
         //
     }
+
+
 
    /**
      * Display the specified resource.
@@ -48,7 +56,9 @@ class UserController extends Controller
     {
         //
     }
-    
+
+
+
     /**
      * Remove the specified resource from storage.
      *
