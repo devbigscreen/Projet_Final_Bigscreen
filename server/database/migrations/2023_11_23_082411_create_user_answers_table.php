@@ -21,7 +21,7 @@ class CreateUserAnswersTable extends Migration
             $table->timestamps();
 
             $table->foreign('question_id')->references('question_id')->on('questions');
-            $table->foreign('user_id')->references('user_id')->on('user_url');
+            $table->foreign('user_id')->references('user_id')->on('user_url')->onDelete('cascade');
         });
     }
 
