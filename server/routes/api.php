@@ -1,8 +1,10 @@
 <?php
 
-use App\Http\Controllers\QuestionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\QuestionController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +21,18 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
 // Questions routes
 Route::post('/questions/add', [QuestionController::class, 'addQuestion']);
 Route::get('/questions/get', [QuestionController::class, 'getAllQuestions']);
 Route::get('/question/get/{question}', [QuestionController::class, 'getOneQuestion']);
 Route::put('/question/update/{question}', [QuestionController::class, 'updateQuestion']);
 Route::delete('/question/delete/{question}', [QuestionController::class, 'destroy']);
+
+
+// User routes
+
+Route::post('/user/add', [UserController::class, 'addUser']);
+Route::get('/userAnswers/get', [UserController::class, 'getAllUserAnswers']);
+Route::get('/userAnswers/get/{userAnswers}', [UserController::class, 'getOneUserAnswers']);
+
