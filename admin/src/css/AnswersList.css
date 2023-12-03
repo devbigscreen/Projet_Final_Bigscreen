@@ -1,0 +1,11 @@
+.answersPage{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.list{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}

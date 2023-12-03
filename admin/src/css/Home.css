@@ -1,0 +1,5 @@
+.homepage{
+    display: flex;
+    flex-flow: row;
+    column-gap: 25rem;
+}
