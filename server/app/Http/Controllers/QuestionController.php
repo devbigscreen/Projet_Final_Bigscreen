@@ -30,7 +30,7 @@ class QuestionController extends Controller
         $question->save();
 
         return response()->json([
-            'message' => 'Nouvelle devise ajoutée !',
+            'message' => 'New question added successfully',
             'data' => $question,
         ]);
     }
@@ -45,7 +45,7 @@ class QuestionController extends Controller
     {
         $questions = Question::all();
         return response()->json([
-            'message' => 'Questions récupérées !',
+            'message' => 'Questions collected!',
             'data' => $questions
         ]);
     }
@@ -63,12 +63,12 @@ class QuestionController extends Controller
 
         if (!$question) {
             return response()->json([
-                'message' => 'Question non trouvée',
+                'message' => 'Question not found',
             ], 404);
         }
 
         return response()->json([
-            'message' => 'Question récupérée !',
+            'message' => 'Question retrieved!',
             'data' => $question,
         ]);
     }
@@ -94,7 +94,7 @@ class QuestionController extends Controller
         ]);
 
         return response()->json([
-            'message' => 'Question mise à jour avec succès!',
+            'message' => 'Question updated successfully!',
             'data' => $question->get(),
         ]);
     }
@@ -110,7 +110,7 @@ class QuestionController extends Controller
         $question->delete();
 
         return response()->json([
-            'message' => 'Question correctement supprimée !',
+            'message' => 'Question correctly deleted!',
         ]);
     }
 }
