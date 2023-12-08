@@ -19,7 +19,7 @@ class UserController extends Controller
     
         {
 
-            $addUser = new addUser;
+            $addUser = new user_answers();
             $addUser->answer_id = $request->input('answer_id');
             $addUser->question_id = $request->input('question_id');
             $addUser->user_id = $request->input('user_id');
@@ -29,7 +29,7 @@ class UserController extends Controller
                 'answer_id' => 'required',
                 'question_id' => 'required',
                 'user_id' => 'required',
-                'answers' => 'required'
+                'answers' => 'required|string|max:225'
             ]);
     
             $addUser->save();
@@ -51,7 +51,7 @@ class UserController extends Controller
      */
     public function getAllUserAnswers()
     {
-        $userAnswers = userAnswers::all();
+        $userAnswers = user_answers::all();
         return response()->json([
             'message' => 'User to recover!',
             'data' => $userAnswers
@@ -69,8 +69,7 @@ class UserController extends Controller
      */
     public function getOneUserAnswers($id)
     {
-
-        $userAnswers = userAnswers::find($id);
+        $userAnswers = user_answers::find($id);
 
         if (!$userAnswers) {
             return response()->json([
@@ -95,7 +94,18 @@ class UserController extends Controller
      */
     public function getUserUrl($id)
     {
-        //
+        $userUrl = user_url::find($id);
+
+        if (!$userUrl) {
+            return response()->json([
+                'message' => 'UserUrl not found!',
+            ], 404);
+        }
+
+        return response()->json([
+            'message' => 'UserUrl recovered!',
+            'data' => $userUrl,
+        ]);
     }
 
 
