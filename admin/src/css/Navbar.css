@@ -1,0 +1,6 @@
+.nav{
+    max-width: 8rem;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
