@@ -15,354 +15,440 @@ class UserAnswersSeeder extends Seeder
     {
         $data = [
             [
-                'id' => '1',
-                'body' => 'Votre adresse mail',
-                'type' => 'B',
+                'question_id' => '1',
+                'answers_id' => '1',
+                'user_id' => 'test1',
                 'Response' => 'charlotte@gmail.com'
             ],
+
             [
-                'id' => '1',
-                'body' => 'Votre adresse mail',
-                'type' => 'B',
-                'Response' => 'adrien@gmail.com'
-            ],
-            [
-                'id' => '1',
-                'body' => 'Votre adresse mail',
-                'type' => 'B',
-                'Response' => 'manon@gmail.com'
-            ],
-            [
-                'id' => '2',
-                'body' => 'Votre âge',
-                'type' => 'B',
+                'question_id' => '2',
+                'answers_id' => '2',
+                'user_id' => 'test1',
                 'Response' => '26 ans'
             ],
             [
-                'id' => '2',
-                'body' => 'Votre âge',
-                'type' => 'B',
+                'question_id' => '3',
+                'answers_id' => '3',
+                'user_id' => 'test1',
+                'Response' => 'Femme'
+            ],
+
+            [
+                'question_id' => '4',
+                'answers_id' => '4',
+                'user_id' => 'test1',
+                'Response' => '3'
+            ],
+
+
+            [
+                'question_id' => '5',
+                'answers_id' => '5',
+                'user_id' => 'test1',
+                'Response' => 'Comptable'
+            ],
+
+            [
+                'question_id' => '6',
+                'answers_id' => '6',
+                'user_id' => 'test1',
+                'Response' => 'HTC Vive'
+            ],
+
+            [
+                'question_id'=> '7',
+                'answers_id' => '7',
+                'user_id' => 'test1',
+                'Response' => 'Windows store'
+            ],
+
+
+            [
+                'question_id' => '8',
+                'answers_id' => '8',
+                'user_id' => 'test1',
+                'Response' => 'Occulus Quest'
+            ],
+
+            [
+                'question_id'=> '9',
+                'answers_id' => '9',
+                'user_id' => 'test1',
+                'Response' => '4'
+            ],
+            [
+                'question_id' => '10',
+                'answers_id' => '10',
+                'user_id' => 'test1',
+                'Response' => 'regarder des films'
+            ],
+
+            [
+                'question_id' => '11',
+                'answers_id' => '11',
+                'user_id' => 'test1',
+                'Response' => '5'
+            ],
+
+            [
+                'question_id' => '12',
+                'answers_id' => '12',
+                'user_id' => 'test1',
+                'Response' => '5'
+            ],
+
+            [
+                'question_id'=> '13',
+                'answers_id' => '13',
+                'user_id' => 'test1',
+                'Response' => '2'
+            ],
+
+            [
+                'question_id'=> '14',
+                'answers_id' => '14',
+                'user_id' => 'test1',
+                'Response' => '3'
+            ],
+
+            [
+                'question_id' => '15',
+                'answers_id' => '15',
+                'user_id' => 'test1',
+                'Response' => '4'
+            ],
+
+            [
+                'question_id'=> '16',
+                'answers_id' => '16',
+                'user_id' => 'test1',
+                'Response' => 'non'
+            ],
+
+            [
+                'question_id' => '17',
+                'answers_id' => '17',
+                'user_id' => 'test1',
+                'Response' => 'oui'
+
+            ],
+
+            [
+                'question_id' => '18',
+                'answers_id' => '18',
+                'user_id' => 'test1',
+                'Response' => '5'
+            ],
+
+            [
+                'question_id'=> '19',
+                'answers_id' => '19',
+                'user_id' => 'test1',
+                'Response' => '4'
+            ],
+
+            [
+                'question_id' => '20',
+                'answers_id' => '20',
+                'user_id' => 'test1',
+                'Response' => 'Un casque VR compatible a Bigscreen'
+            ],
+
+
+
+
+
+            [
+                'question_id' => '1',
+                'answers_id' => '21',
+                'user_id' => 'test2',
+                'Response' => 'adrien@gmail.com'
+            ],
+
+            [
+                'question_id' => '2',
+                'answers_id' => '22',
+                'user_id' => 'test2',
                 'Response' => '24 ans'
             ],
             [
-                'id' => '2',
-                'body' => 'Votre âge',
-                'type' => 'B',
+                'question_id' => '3',
+                'answers_id' => '23',
+                'user_id' => 'test2',
+                'Response' => 'Homme'
+            ],
+
+            [
+                'question_id' => '4',
+                'answers_id' => '24',
+                'user_id' => 'test2',
+                'Response' => '2'
+            ],
+
+
+            [
+                'question_id' => '5',
+                'answers_id' => '25',
+                'user_id' => 'test2',
+                'Response' => 'Chef de projet'
+            ],
+
+            [
+                'question_id' => '6',
+                'answers_id' => '26',
+                'user_id' => 'test2',
+                'Response' => 'Oculus Quest,'
+            ],
+
+            [
+                'question_id'=> '7',
+                'answers_id' => '27',
+                'user_id' => 'test2',
+                'Response' => 'Occulus store'
+            ],
+
+
+            [
+                'question_id' => '8',
+                'answers_id' => '28',
+                'user_id' => 'test2',
+                'Response' => 'HTC Vive Pro,'
+            ],
+
+            [
+                'question_id'=> '9',
+                'answers_id' => '29',
+                'user_id' => 'test2',
+                'Response' => '1'
+            ],
+            [
+                'question_id' => '10',
+                'answers_id' => '30',
+                'user_id' => 'test2',
+                'Response' => 'jouer en solo'
+            ],
+
+            [
+                'question_id' => '11',
+                'answers_id' => '31',
+                'user_id' => 'test2',
+                'Response' => '2'
+            ],
+
+            [
+                'question_id' => '12',
+                'answers_id' => '32',
+                'user_id' => 'test2',
+                'Response' => '3'
+            ],
+
+            [
+                'question_id'=> '13',
+                'answers_id' => '33',
+                'user_id' => 'test2',
+                'Response' => '1'
+            ],
+
+            [
+                'question_id'=> '14',
+                'answers_id' => '34',
+                'user_id' => 'test2',
+                'Response' => '5'
+            ],
+
+            [
+                'question_id' => '15',
+                'answers_id' => '35',
+                'user_id' => 'test2',
+                'Response' => '2'
+            ],
+
+            [
+                'question_id'=> '16',
+                'answers_id' => '36',
+                'user_id' => 'test2',
+                'Response' => 'oui'
+            ],
+
+            [
+                'question_id' => '17',
+                'answers_id' => '37',
+                'user_id' => 'test2',
+                'Response' => 'non'
+            ],
+
+            [
+                'question_id' => '18',
+                'answers_id' => '38',
+                'user_id' => 'test2',
+                'Response' => '4'
+            ],
+
+            [
+                'question_id'=> '19',
+                'answers_id' => '39',
+                'user_id' => 'test2',
+                'Response' => '2'
+            ],
+
+            [
+                'question_id' => '20',
+                'answers_id' => '40',
+                'user_id' => 'test2',
+                'Response' => 'enregistrer les séries et regarder plus tard'
+            ],
+
+
+
+
+
+            [
+                'question_id' => '1',
+                'answers_id' => '41',
+                'user_id' => 'test3',
+                'Response' => 'sarah@gmail.com'
+            ],
+
+            [
+                'question_id' => '2',
+                'answers_id' => '42',
+                'user_id' => 'test3',
                 'Response' => '22 ans'
             ],
             [
-                'id' => '3',
-                'body' => 'Votre sexe',
-                'type' => 'A',
+                'question_id' => '3',
+                'answers_id' => '43',
+                'user_id' => 'test3',
                 'Response' => 'Femme'
             ],
+
             [
-                'id' => '3',
-                'body' => 'Votre sexe',
-                'type' => 'A',
-                'Response' => 'Homme'
-            ],
-            [
-                'id' => '3',
-                'body' => 'Votre sexe',
-                'type' => 'A',
-                'Response' => 'réfère ne pas répondre'
-            ],
-            [
-                'id' => '4',
-                'body' => 'Nombre de personne dans votre foyer (adulte & enfants)',
-                'type' => 'C',
+                'question_id' => '4',
+                'answers_id' => '44',
+                'user_id' => 'test3',
                 'Response' => '3'
             ],
+
+
             [
-                'id' => '4',
-                'body' => 'Nombre de personne dans votre foyer (adulte & enfants)',
-                'type' => 'C',
-                'Response' => '1'
-            ],
-            [
-                'id' => '4',
-                'body' => 'Nombre de personne dans votre foyer (adulte & enfants)',
-                'type' => 'C',
-                'Response' => '5'
-            ],
-            [
-                'id' => '5',
-                'body' => 'Votre profession',
-                'type' => 'B',
-                'Response' => 'Comptable'
-            ],
-            [
-                'id' => '5',
-                'body' => 'Votre profession',
-                'type' => 'B',
+                'question_id' => '5',
+                'answers_id' => '45',
+                'user_id' => 'test3',
                 'Response' => 'graphiste'
             ],
+
             [
-                'id' => '5',
-                'body' => 'Votre profession',
-                'type' => 'B',
-                'Response' => 'chef de projet'
-            ],
-            [
-                'id' => '6',
-                'body' => 'Quel marque de casque VR utilisez-vous ?',
-                'type' => 'A',
-                'Response' => 'HTC Vive'
-            ],
-            [
-                'id' => '6',
-                'body' => 'Quel marque de casque VR utilisez-vous ?',
-                'type' => 'A',
+                'question_id' => '6',
+                'answers_id' => '46',
+                'user_id' => 'test3',
                 'Response' => 'Valve index'
-            ], [
-                'id' => '6',
-                'body' => 'Quel marque de casque VR utilisez-vous ?',
-                'type' => 'A',
-                'Response' => 'Windows Mixed Reality'
             ],
+
             [
-                'id' => '7',
-                'body' => "Sur quel magasin d'application achetez vous des contenus VR ?",
-                'type' => 'A',
-                'Response' => 'Windows store'
-            ],
-            [
-                'id' => '7',
-                'body' => "Sur quel magasin d'application achetez vous des contenus VR ?",
-                'type' => 'A',
-                'Response' => 'Occulus store'
-            ],
-            [
-                'id' => '7',
-                'body' => "Sur quel magasin d'application achetez vous des contenus VR ?",
-                'type' => 'A',
+                'question_id'=> '7',
+                'answers_id' => '47',
+                'user_id' => 'test3',
                 'Response' => 'Viveport'
             ],
+
+
             [
-                'id' => '8',
-                'body' => "Quel casque envisagez-vous d'acheter dans un futur proche ?",
-                'type' => 'A',
-                'Response' => 'PSVR'
+                'question_id' => '8',
+                'answers_id' => '48',
+                'user_id' => 'test3',
+                'Response' => 'HTC Vive Pro,'
             ],
+
             [
-                'id' => '8',
-                'body' => "Quel casque envisagez-vous d'acheter dans un futur proche ?",
-                'type' => 'A',
-                'Response' => 'Occulus Go'
-            ],
-            [
-                'id' => '8',
-                'body' => "Quel casque envisagez-vous d'acheter dans un futur proche ?",
-                'type' => 'A',
-                'Response' => 'Occulus Quest'
-            ],
-            [
-                'id' => '9',
-                'body' => "Au sein de votre foyer, combien de personnes utilisent votre casque VR pour regarder Bigscreen ?",
-                'type' => 'C',
-                'Response' => '2'
-            ],
-            [
-                'id' => '9',
-                'body' => "Au sein de votre foyer, combien de personnes utilisent votre casque VR pour regarder Bigscreen ?",
-                'type' => 'C',
-                'Response' => '1'
-            ],
-            [
-                'id' => '9',
-                'body' => "Au sein de votre foyer, combien de personnes utilisent votre casque VR pour regarder Bigscreen ?",
-                'type' => 'C',
-                'Response' => '4'
-            ],
-            [
-                'id' => '10',
-                'body' => "Vous utilisez principalement Bigscreen pour :",
-                'type' => 'A',
-                'Response' => 'regarder des films'
-            ],
-            [
-                'id' => '10',
-                'body' => "Vous utilisez principalement Bigscreen pour :",
-                'type' => 'A',
-                'Response' => 'jouer en solo'
-            ],
-            [
-                'id' => '10',
-                'body' => "Vous utilisez principalement Bigscreen pour :",
-                'type' => 'A',
-                'Response' => 'jouer en équipe'
-            ],
-            [
-                'id' => '11',
-                'body' => "Combien donnez-vous de point pour la qualité de l'image sur Bigscreen ?",
-                'type' => 'C',
-                'Response' => '5'
-            ],
-            [
-                'id' => '11',
-                'body' => "Combien donnez-vous de point pour la qualité de l'image sur Bigscreen ?",
-                'type' => 'C',
-                'Response' => '1'
-            ],
-            [
-                'id' => '11',
-                'body' => "Combien donnez-vous de point pour la qualité de l'image sur Bigscreen ?",
-                'type' => 'C',
-                'Response' => '2'
-            ],
-            [
-                'id' => '12',
-                'body' => "Combien donnez-vous de point pour le confort d'utilisation de l'interface Bigscreen ?",
-                'type' => 'C',
-                'Response' => '5'
-            ],
-            [
-                'id' => '12',
-                'body' => "Combien donnez-vous de point pour le confort d'utilisation de l'interface Bigscreen ?",
-                'type' => 'C',
-                'Response' => '4'
-            ],
-            [
-                'id' => '12',
-                'body' => "Combien donnez-vous de point pour le confort d'utilisation de l'interface Bigscreen ?",
-                'type' => 'C',
-                'Response' => '2'
-            ],
-            [
-                'id' => '13',
-                'body' => "Combien donnez-vous de point pour la connexion réseau de Bigscreen ?",
-                'type' => 'C',
-                'Response' => '2'
-            ],
-            [
-                'id' => '13',
-                'body' => "Combien donnez-vous de point pour la connexion réseau de Bigscreen ?",
-                'type' => 'C',
-                'Response' => '4'
-            ],
-            [
-                'id' => '13',
-                'body' => "Combien donnez-vous de point pour la connexion réseau de Bigscreen ?",
-                'type' => 'C',
-                'Response' => '5'
-            ],
-            [
-                'id' => '14',
-                'body' => "Combien donnez-vous de point pour la qualité des graphismes 3D dans Bigscreen ?",
-                'type' => 'C',
+                'question_id'=> '9',
+                'answers_id' => '49',
+                'user_id' => 'test3',
                 'Response' => '3'
             ],
             [
-                'id' => '14',
-                'body' => "Combien donnez-vous de point pour la qualité des graphismes 3D dans Bigscreen ?",
-                'type' => 'C',
+                'question_id' => '10',
+                'answers_id' => '50',
+                'user_id' => 'test3',
+                'Response' => 'regarder la TV en direct'
+            ],
+
+            [
+                'question_id' => '11',
+                'answers_id' => '51',
+                'user_id' => 'test3',
+                'Response' => '5'
+            ],
+
+            [
+                'question_id' => '12',
+                'answers_id' => '52',
+                'user_id' => 'test3',
                 'Response' => '2'
             ],
+
             [
-                'id' => '14',
-                'body' => "Combien donnez-vous de point pour la qualité des graphismes 3D dans Bigscreen ?",
-                'type' => 'C',
+                'question_id'=> '13',
+                'answers_id' => '53',
+                'user_id' => 'test3',
+                'Response' => '5'
+            ],
+
+            [
+                'question_id'=> '14',
+                'answers_id' => '54',
+                'user_id' => 'test3',
                 'Response' => '1'
             ],
+
             [
-                'id' => '15',
-                'body' => "Combien donnez-vous de point pour la qualité audio dans Bigscreen ?",
-                'type' => 'C',
+                'question_id' => '15',
+                'answers_id' => '55',
+                'user_id' => 'test3',
                 'Response' => '4'
             ],
+
             [
-                'id' => '15',
-                'body' => "Combien donnez-vous de point pour la qualité audio dans Bigscreen ?",
-                'type' => 'C',
-                'Response' => '3'
-            ],
-            [
-                'id' => '15',
-                'body' => "Combien donnez-vous de point pour la qualité audio dans Bigscreen ?",
-                'type' => 'C',
-                'Response' => '2'
-            ],
-            [
-                'id' => '16',
-                'body' => "Aimeriez-vous avoir des notifications plus précises au cours de vos sessions Bigscreen ?",
-                'type' => 'A',
+                'question_id'=> '16',
+                'answers_id' => '56',
+                'user_id' => 'test3',
                 'Response' => 'non'
             ],
+
             [
-                'id' => '16',
-                'body' => "Aimeriez-vous avoir des notifications plus précises au cours de vos sessions Bigscreen ?",
-                'type' => 'A',
+                'question_id' => '17',
+                'answers_id' => '57',
+                'user_id' => 'test3',
                 'Response' => 'oui'
             ],
+
             [
-                'id' => '17',
-                'body' => "Aimeriez-vous pouvoir inviter un ami à rejoindre votre session via son smartphone ?",
-                'type' => 'A',
-                'Response' => 'oui'
-            ],
-            [
-                'id' => '17',
-                'body' => "Aimeriez-vous pouvoir inviter un ami à rejoindre votre session via son smartphone ?",
-                'type' => 'A',
-                'Response' => 'non'
-            ],
-            [
-                'id' => '18',
-                'body' => "Aimeriez-vous pouvoir enregistrer des émissions TV pour pouvoir les regarder ultérieurement ?",
-                'type' => 'C',
+                'question_id' => '18',
+                'answers_id' => '58',
+                'user_id' => 'test3',
                 'Response' => '5'
             ],
+
             [
-                'id' => '18',
-                'body' => "Aimeriez-vous pouvoir enregistrer des émissions TV pour pouvoir les regarder ultérieurement ?",
-                'type' => 'C',
-                'Response' => '1'
-            ],
-            [
-                'id' => '18',
-                'body' => "Aimeriez-vous pouvoir enregistrer des émissions TV pour pouvoir les regarder ultérieurement ?",
-                'type' => 'C',
+                'question_id'=> '19',
+                'answers_id' => '59',
+                'user_id' => 'test3',
                 'Response' => '3'
             ],
+
             [
-                'id' => '19',
-                'body' => "Aimeriez-vous jouer à des jeux exclusifs sur votre Bigscreen ?",
-                'type' => 'C',
-                'Response' => '4'
+                'question_id' => '20',
+                'answers_id' => '60',
+                'user_id' => 'test3',
+                'Response' => 'personnalisation de l’expérience'
             ],
-            [
-                'id' => '19',
-                'body' => "Aimeriez-vous jouer à des jeux exclusifs sur votre Bigscreen ?",
-                'type' => 'C',
-                'Response' => '2'
-            ],
-            [
-                'id' => '19',
-                'body' => "Aimeriez-vous jouer à des jeux exclusifs sur votre Bigscreen ?",
-                'type' => 'C',
-                'Response' => '5'
-            ],
-            [
-                'id' => '20',
-                'body' => "Quelle nouvelle fonctionnalité devrait exister sur Bigscreen ?",
-                'type' => 'B',
-                'Response' => 'Un casque VR compatible a Bigscreen'
-            ],
-            [
-                'id' => '20',
-                'body' => "Quelle nouvelle fonctionnalité devrait exister sur Bigscreen ?",
-                'type' => 'B',
-                'Response' => 'un vaste choix de salle de cinéma virtuelles'
-            ],
-    
         ];
 
         foreach ($data as $userAnswersData) {
-           Answer::create([
-                'answer_id' => $userAnswersData['id'],
-                'body' => $userAnswersData['body'],
-                'type' => $userAnswersData['type'],
+            Answer::create([
+                'question_id' => $userAnswersData['question_id'],
+                'answers_id' => $userAnswersData['answers_id'],
+                'user_id' => $userAnswersData['user_id'],
                 'Response' => $userAnswersData['response'] ?? null,
             ]);
         }
