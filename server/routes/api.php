@@ -25,6 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/login', [AdminController::class, 'login']);
 Route::post('/register', [AdminController::class, 'store']);
 
+
 // Questions routes
 Route::post('/questions/add', [QuestionController::class, 'addQuestion']);
 Route::get('/questions/get', [QuestionController::class, 'getAllQuestions']);
@@ -34,8 +35,7 @@ Route::delete('/question/delete/{question}', [QuestionController::class, 'destro
 
 
 // User routes
-
-Route::post('/addUser', [UserController::class, 'addUser']);
-Route::get('/userAnswers', [UserController::class, 'getAllUserAnswers']);
-Route::get('/userAnswers/{id}', [UserController::class, 'getOneUserAnswers']);
+Route::post('/user/add', [UserController::class, 'addUser']);
+Route::get('user/userAnswers', [UserController::class, 'getAllUserAnswers']);
+Route::get('user/userAnswers/{id}', [UserController::class, 'getOneUserAnswers']);
 
