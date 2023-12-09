@@ -36,6 +36,8 @@ Route::delete('/question/delete/{question}', [QuestionController::class, 'destro
 
 // User routes
 Route::post('/user/add', [UserController::class, 'addUser']);
-Route::get('user/userAnswers', [UserController::class, 'getAllUserAnswers']);
-Route::get('user/userAnswers/{id}', [UserController::class, 'getOneUserAnswers']);
+Route::get('/users/answers', [UserController::class, 'getAllUsersAnswers']);
+Route::get('/user/answers/{id}', [UserController::class, 'getOneUserAnswers']);
+Route::get('/user/url/{id}', [UserController::class, 'getUserUrl']);
+Route::delete('/user/delete/{id}', [UserController::class, 'destroy']);
 

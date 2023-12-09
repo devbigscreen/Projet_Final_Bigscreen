@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -47,7 +46,7 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $admin = new admin;
+        $admin = new User();
         $admin->email= $request->input('email');
         $admin->password = $request->input('password');
 
