@@ -22,8 +22,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // Admin routes
-Route::post('/login', [AdminController::class, 'login']);
-Route::post('/register', [AdminController::class, 'store']);
+Route::post('/admin/login', [AdminController::class, 'login']);
+Route::post('/admin/register', [AdminController::class, 'store']);
+Route::delete('/admin/delete/{id}', [AdminController::class, 'destroy']);
 
 
 // Questions routes
