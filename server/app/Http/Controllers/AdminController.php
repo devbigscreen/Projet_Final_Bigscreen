@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use Illuminate\Http\Request;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
@@ -16,7 +15,7 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function Login(Request $request)
+    public function login(Request $request)
     {
         $credentials = $request->validate([
             'email' => ['required'],
@@ -29,14 +28,13 @@ class AdminController extends Controller
             ], 401);
         }
 
-        $admin = User::where('email', $request->email)->first();
+        $admin = Admin::where('email', $request->email)->first();
         $token = $admin->createToken("token")->plainTextToken;
         return response()->json([
             'message' => 'Successfully Authentication',
             'token' => $token
         ]);
     }
-
 
 
     /**
@@ -47,7 +45,7 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $admin = new admin;
+        $admin = new Admin();
         $admin->email= $request->input('email');
         $admin->password = $request->input('password');
 
@@ -55,6 +53,29 @@ class AdminController extends Controller
         $admin->save();
         return response()->json([
             'message' => 'Administrator successfully added'
+        ]);
+    }
+
+    /**
+     * Remove the specified admin from the database.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $admin = Admin::where('id', $id)->first();
+
+        if (!$admin) {
+            return response()->json([
+                'message' => 'Admin not found!',
+            ], 404);
+        }
+
+        $admin->delete();
+
+        return response()->json([
+            'message' => 'Admin deleted successfully!',
         ]);
     }
 

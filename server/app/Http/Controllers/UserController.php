@@ -4,43 +4,64 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use App\Models\user_answers;
+use App\Models\UserAnswers;
+use App\Models\UserUrl;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Str;
 
 
 class UserController extends Controller
 {
-   /**
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function addUser(Request $request)
-    
-        {
+    {
+        $userId = Str::random(50);
 
-            $addUser = new user_answers();
-            $addUser->answer_id = $request->input('answer_id');
-            $addUser->question_id = $request->input('question_id');
-            $addUser->user_id = $request->input('user_id');
-            $addUser->answers = $request->input('answers');
-    
-            $request->validate([
-                'answer_id' => 'required',
-                'question_id' => 'required',
-                'user_id' => 'required',
-                'answers' => 'required|string|max:225'
-            ]);
-    
-            $addUser->save();
-    
-            return response()->json([
-                'message' => 'New user add succesfully !',
-                'data' => $addUser,
-            ]);
-            
+        $request->validate([
+            'answers' => 'required|array',
+            'answers.*.answer_id' => 'required',
+            'answers.*.question_id' => 'required',
+            'answers.*.answers' => 'required|string|max:225',
+            'url' => 'required',
+        ]);
+
+        $userUrl = new UserUrl();
+        $userUrl->user_id = $userId;
+        $userUrl->url = $request->input('url');
+        $userUrl->save();
+
+        $userAnswers = [];
+        foreach ($request->input('answers') as $answer) {
+            $userAnswer = new UserAnswers();
+            $userAnswer->answer_id = $answer['answer_id'];
+            $userAnswer->question_id = $answer['question_id'];
+            $userAnswer->user_id = $userId;
+            $userAnswer->answers = $answer['answers'];
+
+            if ($userAnswer->save()) {
+                $userAnswers[] = $userAnswer;
+            } else {
+                dd($userAnswer->getErrors()->toArray());
+            }
         }
-    
+
+        if (count($userAnswers) > 0) {
+            return response()->json([
+                'message' => 'New user added successfully!',
+                'answersDatas' => $userAnswers,
+                'urlDatas' => $userUrl
+            ]);
+        } else {
+            return response()->json([
+                'message' => 'Error saving user answers.',
+            ], 500);
+        }
+    }
+
 
 
     /**
@@ -49,14 +70,13 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function getAllUserAnswers()
+    public function getAllUsersAnswers()
     {
-        $userAnswers = user_answers::all();
+        $usersAnswers = UserAnswers::all();
         return response()->json([
             'message' => 'User to recover!',
-            'data' => $userAnswers
+            'data' => $usersAnswers
         ]);
-
     }
 
 
@@ -69,9 +89,9 @@ class UserController extends Controller
      */
     public function getOneUserAnswers($id)
     {
-        $userAnswers = user_answers::find($id);
+        $userAnswers = UserAnswers::where('user_id', $id)->get();
 
-        if (!$userAnswers) {
+        if ($userAnswers->isEmpty()) {
             return response()->json([
                 'message' => 'UserAnswers not found!',
             ], 404);
@@ -81,7 +101,6 @@ class UserController extends Controller
             'message' => 'UserAnswers recovered!',
             'data' => $userAnswers,
         ]);
-
     }
 
 
@@ -94,7 +113,7 @@ class UserController extends Controller
      */
     public function getUserUrl($id)
     {
-        $userUrl = user_url::find($id);
+        $userUrl = UserUrl::where('user_id', $id)->get();
 
         if (!$userUrl) {
             return response()->json([
@@ -119,6 +138,20 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $userUrl = UserUrl::where('user_id', $id)->first();
+
+        if (!$userUrl) {
+            return response()->json([
+                'message' => 'UserUrl not found!',
+            ], 404);
+        }
+
+        $userUrl->delete();
+
+        UserAnswers::where('user_id', $id)->delete();
+
+        return response()->json([
+            'message' => 'UserUrl and associated UserAnswers deleted successfully!',
+        ]);
     }
 }

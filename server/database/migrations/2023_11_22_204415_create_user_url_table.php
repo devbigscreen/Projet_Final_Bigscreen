@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersUrlsTable extends Migration
+class CreateUserUrlTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class CreateUsersUrlsTable extends Migration
     public function up()
     {
         Schema::create('user_url', function (Blueprint $table) {
-            $table->string('user_id')->index();
+            $table->string('user_id', 50)->index();
             $table->string('url')->unique();
             $table->timestamps();
         });

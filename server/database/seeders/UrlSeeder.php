@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\UserUrl;
 use Illuminate\Database\Seeder;
 
 class UrlSeeder extends Seeder
@@ -16,23 +17,23 @@ class UrlSeeder extends Seeder
       $data = [
         [
           'user_id' => 'test1',
-          'user_url' => 'https://www.bigscreen.com/1'
+          'url' => 'https://www.bigscreen.com/1'
       ],
         [
           'user_id' => 'test2',
-          'user_url' => 'https://www.bigscreen.com/2'
+          'url' => 'https://www.bigscreen.com/2'
       ],
       [
         'user_id' => 'test3',
-        'user_url' => 'https://www.bigscreen.com/3'
+        'url' => 'https://www.bigscreen.com/3'
     ],
 
       ];
       foreach ($data as $urlData) {
-        Url::create([
+        UserUrl::create([
             'user_id' => $urlData['user_id'],
-            'user_url' => $urlData['user_url'],
-          
+            'url' => $urlData['url'],
+
         ]);
     }
     }
