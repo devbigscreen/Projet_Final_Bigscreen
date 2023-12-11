@@ -3,3 +3,13 @@
     flex-flow: row;
     column-gap: 25rem;
 }
+
+.charts{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 1rem; 
+    width: 60rem;
+    height: auto;
+    list-style: none;
+}
