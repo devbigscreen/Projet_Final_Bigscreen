@@ -1,14 +1,28 @@
 import List from "../components/List";
-import '../css/AnswersList.css';
+import "../css/AnswersList.css";
+import { useEffect, useState } from "react";
+import { getAllQuestions, getOneUserAnswers } from "../services/requests";
 
 const AnswersList = () => {
+  let [questionsDatas, setQuestionsDatas] = useState([]);
+  let [userAnswers, setUserAnswers] = useState([]);
+
+  useEffect(() => {
+    getAllQuestions().then((res) => {
+      setQuestionsDatas(res.data.data);
+    });
+
+    getOneUserAnswers('test2').then((res) => {
+      setUserAnswers(res.data.data);
+    });
+  }, []);
+
   return (
-    <div role="region" className="answersPage">
-      <div className="list" role="region">
-        <h1>Vos réponses :</h1>
-        <List />
-      </div>
-    </div>
+    <List
+      questionsDatas={questionsDatas}
+      view="answers"
+      userDatas={userAnswers}
+    />
   );
 };
 
