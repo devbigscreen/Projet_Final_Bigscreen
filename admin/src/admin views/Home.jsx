@@ -78,8 +78,6 @@ const Home = () => {
 
     let question = allQuestions[arrayId].body;
 
-    console.log(allAnswers)
-
     possibleAnswers.forEach(element =>{
       let count = 0;
       allAnswers.forEach(answer =>{
@@ -90,8 +88,6 @@ const Home = () => {
 
       countsAnswersArray.push(count);
     });
-
-    console.log(JSON.stringify(question))
 
     const nextDatasets =  {
       labels: possibleAnswers,
