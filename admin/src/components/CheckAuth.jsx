@@ -9,14 +9,12 @@ const token = localStorage.getItem("token");
 const navigate = useNavigate();
 
 useEffect(()=>{
-  if (token === null)
-  navigate("/");
+  if (token === null){
+  navigate("/");}
 },[])
 
   return (
-    <>
-      
-    </>
+    <></>
   );
 };
 

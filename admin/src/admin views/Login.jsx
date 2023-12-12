@@ -4,8 +4,6 @@ import { useEffect } from 'react';
 import { login } from '../services/requests';
 import {useNavigate} from "react-router-dom";
 
-import CheckAuth from '../components/CheckAuth';
-
 const Login = () => {
 
     const navigate = useNavigate();
@@ -23,16 +21,15 @@ event.preventDefault()
 const email = document.querySelector('#email').value
 const password = document.querySelector('#password').value
 console.log(password)
-        // login(email, password).then(response =>{
-        //     console.log(response)
-        //     navigate("/home")
-        // })
+    login(email, password).then(response =>{
+        console.log(response)
+        navigate("/home")
+    })
     }
 
 
   return (
     <>
-<CheckAuth/>
     <div className="ConnexionformulaireCtnr">
         <div className="form">
 

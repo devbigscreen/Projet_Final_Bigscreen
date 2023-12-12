@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Admin;
+use App\Models\User;
 
 class AdminSeeder extends Seeder
 {
@@ -23,7 +23,7 @@ class AdminSeeder extends Seeder
             ];
 
         foreach ($data as $adminData) {
-            Admin::create([
+            User::create([
                 'email' => $adminData['email'],
                 'password' => $adminData['password'],
             ]);
