@@ -20,3 +20,12 @@ export async function getAllQuestions() {
     throw error;
   }
 }
+
+export async function getOneUserAnswers(userId){
+  try {
+    const response = await axios.get(`${url + "/user/answers/" + userId}`);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+}

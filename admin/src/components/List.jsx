@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -27,49 +28,32 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-export default function CustomizedTables() {
+export default function List(props) {
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 900 }} aria-label="customized table">
         <TableHead>
           <TableRow>
             <StyledTableCell>N°</StyledTableCell>
-            <StyledTableCell align="right">Question</StyledTableCell>
-            <StyledTableCell align="right">Type</StyledTableCell>          </TableRow>
+            <StyledTableCell align="center">Question</StyledTableCell>
+            <StyledTableCell align="center">{ props.view === 'questions' ? 'Type' : 'Answers' }</StyledTableCell>          
+          </TableRow>
         </TableHead>
         <TableBody>
-
-            <StyledTableRow key={1}>
+          {props.questionsDatas.map((question, index)=>(
+            <StyledTableRow key={index}>
               <StyledTableCell component="th" scope="row">
-                1
+                {question.question_id}
               </StyledTableCell>
-              <StyledTableCell align="right">Test ?</StyledTableCell>
-              <StyledTableCell align="right">A</StyledTableCell>
+              <StyledTableCell align="center">{ question.body }</StyledTableCell>
+              {props.view === "questions" ? 
+                <StyledTableCell align="center">{ question.type }</StyledTableCell>
+                :
+                <StyledTableCell align="center">{ props.userDatas[index].answers }</StyledTableCell>
+              }
             </StyledTableRow>
-
-            <StyledTableRow key={2}>
-              <StyledTableCell component="th" scope="row">
-                1
-              </StyledTableCell>
-              <StyledTableCell align="right">Test ?</StyledTableCell>
-              <StyledTableCell align="right">A</StyledTableCell>
-            </StyledTableRow>
-
-            <StyledTableRow key={3}>
-              <StyledTableCell component="th" scope="row">
-                1
-              </StyledTableCell>
-              <StyledTableCell align="right">Test ?</StyledTableCell>
-              <StyledTableCell align="right">A</StyledTableCell>
-            </StyledTableRow>
-
-            <StyledTableRow key={4}>
-              <StyledTableCell component="th" scope="row">
-                1
-              </StyledTableCell>
-              <StyledTableCell align="right">Test ?</StyledTableCell>
-              <StyledTableCell align="right">A</StyledTableCell>
-            </StyledTableRow>
+          ))}
         </TableBody>
       </Table>
     </TableContainer>

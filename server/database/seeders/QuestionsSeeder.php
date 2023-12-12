@@ -128,7 +128,7 @@ class QuestionsSeeder extends Seeder
                 'body' => "Aimeriez-vous avoir des notifications plus précises au cours de vos sessions Bigscreen ?",
                 'type' => 'A',
                 'choices' => [
-                    'a' => 'Oui',
+                    'a' => 'oui',
                     'b' => 'non',
                 ],
             ],
@@ -137,7 +137,7 @@ class QuestionsSeeder extends Seeder
                 'body' => "Aimeriez-vous pouvoir inviter un ami à rejoindre votre session via son smartphone ?",
                 'type' => 'A',
                 'choices' => [
-                    'a' => 'Oui',
+                    'a' => 'oui',
                     'b' => 'non',
                 ],
             ],
