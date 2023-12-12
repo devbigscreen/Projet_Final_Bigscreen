@@ -58,7 +58,7 @@ class UserAnswersSeeder extends Seeder
             ],
 
             [
-                'question_id'=> '7',
+                'question_id' => '7',
                 'answer_id' => '7',
                 'user_id' => 'test1',
                 'answers' => 'Windows store'
@@ -73,7 +73,7 @@ class UserAnswersSeeder extends Seeder
             ],
 
             [
-                'question_id'=> '9',
+                'question_id' => '9',
                 'answer_id' => '9',
                 'user_id' => 'test1',
                 'answers' => '4'
@@ -100,14 +100,14 @@ class UserAnswersSeeder extends Seeder
             ],
 
             [
-                'question_id'=> '13',
+                'question_id' => '13',
                 'answer_id' => '13',
                 'user_id' => 'test1',
                 'answers' => '2'
             ],
 
             [
-                'question_id'=> '14',
+                'question_id' => '14',
                 'answer_id' => '14',
                 'user_id' => 'test1',
                 'answers' => '3'
@@ -121,7 +121,7 @@ class UserAnswersSeeder extends Seeder
             ],
 
             [
-                'question_id'=> '16',
+                'question_id' => '16',
                 'answer_id' => '16',
                 'user_id' => 'test1',
                 'answers' => 'non'
@@ -143,7 +143,7 @@ class UserAnswersSeeder extends Seeder
             ],
 
             [
-                'question_id'=> '19',
+                'question_id' => '19',
                 'answer_id' => '19',
                 'user_id' => 'test1',
                 'answers' => '4'
@@ -155,9 +155,6 @@ class UserAnswersSeeder extends Seeder
                 'user_id' => 'test1',
                 'answers' => 'Un casque VR compatible a Bigscreen'
             ],
-
-
-
 
 
             [
@@ -199,11 +196,11 @@ class UserAnswersSeeder extends Seeder
                 'question_id' => '6',
                 'answer_id' => '26',
                 'user_id' => 'test2',
-                'answers' => 'Oculus Quest,'
+                'answers' => 'Oculus Quest'
             ],
 
             [
-                'question_id'=> '7',
+                'question_id' => '7',
                 'answer_id' => '27',
                 'user_id' => 'test2',
                 'answers' => 'Occulus store'
@@ -214,11 +211,11 @@ class UserAnswersSeeder extends Seeder
                 'question_id' => '8',
                 'answer_id' => '28',
                 'user_id' => 'test2',
-                'answers' => 'HTC Vive Pro,'
+                'answers' => 'HTC Vive Pro'
             ],
 
             [
-                'question_id'=> '9',
+                'question_id' => '9',
                 'answer_id' => '29',
                 'user_id' => 'test2',
                 'answers' => '1'
@@ -245,14 +242,14 @@ class UserAnswersSeeder extends Seeder
             ],
 
             [
-                'question_id'=> '13',
+                'question_id' => '13',
                 'answer_id' => '33',
                 'user_id' => 'test2',
                 'answers' => '1'
             ],
 
             [
-                'question_id'=> '14',
+                'question_id' => '14',
                 'answer_id' => '34',
                 'user_id' => 'test2',
                 'answers' => '5'
@@ -266,7 +263,7 @@ class UserAnswersSeeder extends Seeder
             ],
 
             [
-                'question_id'=> '16',
+                'question_id' => '16',
                 'answer_id' => '36',
                 'user_id' => 'test2',
                 'answers' => 'oui'
@@ -287,7 +284,7 @@ class UserAnswersSeeder extends Seeder
             ],
 
             [
-                'question_id'=> '19',
+                'question_id' => '19',
                 'answer_id' => '39',
                 'user_id' => 'test2',
                 'answers' => '2'
@@ -299,9 +296,6 @@ class UserAnswersSeeder extends Seeder
                 'user_id' => 'test2',
                 'answers' => 'enregistrer les séries et regarder plus tard'
             ],
-
-
-
 
 
             [
@@ -347,7 +341,7 @@ class UserAnswersSeeder extends Seeder
             ],
 
             [
-                'question_id'=> '7',
+                'question_id' => '7',
                 'answer_id' => '47',
                 'user_id' => 'test3',
                 'answers' => 'Viveport'
@@ -358,11 +352,11 @@ class UserAnswersSeeder extends Seeder
                 'question_id' => '8',
                 'answer_id' => '48',
                 'user_id' => 'test3',
-                'answers' => 'HTC Vive Pro,'
+                'answers' => 'HTC Vive Pro'
             ],
 
             [
-                'question_id'=> '9',
+                'question_id' => '9',
                 'answer_id' => '49',
                 'user_id' => 'test3',
                 'answers' => '3'
@@ -389,14 +383,14 @@ class UserAnswersSeeder extends Seeder
             ],
 
             [
-                'question_id'=> '13',
+                'question_id' => '13',
                 'answer_id' => '53',
                 'user_id' => 'test3',
                 'answers' => '5'
             ],
 
             [
-                'question_id'=> '14',
+                'question_id' => '14',
                 'answer_id' => '54',
                 'user_id' => 'test3',
                 'answers' => '1'
@@ -410,7 +404,7 @@ class UserAnswersSeeder extends Seeder
             ],
 
             [
-                'question_id'=> '16',
+                'question_id' => '16',
                 'answer_id' => '56',
                 'user_id' => 'test3',
                 'answers' => 'non'
@@ -431,7 +425,7 @@ class UserAnswersSeeder extends Seeder
             ],
 
             [
-                'question_id'=> '19',
+                'question_id' => '19',
                 'answer_id' => '59',
                 'user_id' => 'test3',
                 'answers' => '3'
@@ -441,7 +435,280 @@ class UserAnswersSeeder extends Seeder
                 'question_id' => '20',
                 'answer_id' => '60',
                 'user_id' => 'test3',
-                'answers' => 'personnalisation de l’expérience'
+                'answers' => 'personnalisation de l\'expérience'
+            ],
+
+            [
+                'question_id' => '1',
+                'answer_id' => '61',
+                'user_id' => 'test4',
+                'answers' => 'Rathalos@gmail.com'
+            ],
+
+            [
+                'question_id' => '2',
+                'answer_id' => '62',
+                'user_id' => 'test4',
+                'answers' => '33 ans'
+            ],
+
+            [
+                'question_id' => '3',
+                'answer_id' => '63',
+                'user_id' => 'test4',
+                'answers' => 'Homme'
+            ],
+
+            [
+                'question_id' => '4',
+                'answer_id' => '64',
+                'user_id' => 'test4',
+                'answers' => '2'
+            ],
+
+            [
+                'question_id' => '5',
+                'answer_id' => '65',
+                'user_id' => 'test4',
+                'answers' => 'UI designer'
+            ],
+
+            [
+                'question_id' => '6',
+                'answer_id' => '66',
+                'user_id' => 'test4',
+                'answers' => 'Occulus Quest'
+            ],
+
+            [
+                'question_id' => '7',
+                'answer_id' => '67',
+                'user_id' => 'test4',
+                'answers' => 'Viveport'
+            ],
+
+            [
+                'question_id' => '8',
+                'answer_id' => '68',
+                'user_id' => 'test4',
+                'answers' => 'Occulus Go'
+            ],
+
+            [
+                'question_id' => '9',
+                'answer_id' => '69',
+                'user_id' => 'test4',
+                'answers' => '1'
+            ],
+
+            [
+                'question_id' => '10',
+                'answer_id' => '70',
+                'user_id' => 'test4',
+                'answers' => 'jouer en équipe'
+            ],
+
+            [
+                'question_id' => '11',
+                'answer_id' => '71',
+                'user_id' => 'test4',
+                'answers' => '4'
+            ],
+
+            [
+                'question_id' => '12',
+                'answer_id' => '72',
+                'user_id' => 'test4',
+                'answers' => '3'
+            ],
+
+            [
+                'question_id' => '13',
+                'answer_id' => '73',
+                'user_id' => 'test4',
+                'answers' => '5'
+            ],
+
+            [
+                'question_id' => '14',
+                'answer_id' => '74',
+                'user_id' => 'test4',
+                'answers' => '4'
+            ],
+
+            [
+                'question_id' => '15',
+                'answer_id' => '75',
+                'user_id' => 'test4',
+                'answers' => '3'
+            ],
+
+            [
+                'question_id' => '16',
+                'answer_id' => '76',
+                'user_id' => 'test4',
+                'answers' => 'non'
+            ],
+
+            [
+                'question_id' => '17',
+                'answer_id' => '77',
+                'user_id' => 'test4',
+                'answers' => 'oui'
+            ],
+
+            [
+                'question_id' => '18',
+                'answer_id' => '78',
+                'user_id' => 'test4',
+                'answers' => '4'
+            ],
+
+            [
+                'question_id' => '19',
+                'answer_id' => '79',
+                'user_id' => 'test4',
+                'answers' => '5'
+            ],
+
+            [
+                'question_id' => '20',
+                'answer_id' => '80',
+                'user_id' => 'test4',
+                'answers' => 'Aucune idée'
+            ],
+
+            [
+                'question_id' => '1',
+                'answer_id' => '81',
+                'user_id' => 'test5',
+                'answers' => 'arkhaneLyon@gmail.com'
+            ],
+
+            [
+                'question_id' => '2',
+                'answer_id' => '82',
+                'user_id' => 'test5',
+                'answers' => '22 ans'
+            ],
+
+            [
+                'question_id' => '3',
+                'answer_id' => '83',
+                'user_id' => 'test5',
+                'answers' => 'Femme'
+            ],
+
+            [
+                'question_id' => '4',
+                'answer_id' => '84',
+                'user_id' => 'test5',
+                'answers' => '1'
+            ],
+
+            [
+                'question_id' => '5',
+                'answer_id' => '85',
+                'user_id' => 'test5',
+                'answers' => 'Restaurateur'
+            ],
+
+            [
+                'question_id' => '6',
+                'answer_id' => '86',
+                'user_id' => 'test5',
+                'answers' => 'Occulus Rift/s'
+            ],
+
+            [
+                'question_id' => '7',
+                'answer_id' => '87',
+                'user_id' => 'test5',
+                'answers' => 'Occulus store'
+            ],
+
+            [
+                'question_id' => '8',
+                'answer_id' => '88',
+                'user_id' => 'test5',
+                'answers' => 'Occulus Go'
+            ],
+
+            [
+                'question_id' => '9',
+                'answer_id' => '89',
+                'user_id' => 'test5',
+                'answers' => '1'
+            ],
+
+            [
+                'question_id' => '11',
+                'answer_id' => '91',
+                'user_id' => 'test5',
+                'answers' => '2'
+            ],
+
+            [
+                'question_id' => '12',
+                'answer_id' => '92',
+                'user_id' => 'test5',
+                'answers' => '1'
+            ],
+
+            [
+                'question_id' => '13',
+                'answer_id' => '93',
+                'user_id' => 'test5',
+                'answers' => '2'
+            ],
+
+            [
+                'question_id' => '14',
+                'answer_id' => '94',
+                'user_id' => 'test5',
+                'answers' => '3'
+            ],
+
+            [
+                'question_id' => '15',
+                'answer_id' => '95',
+                'user_id' => 'test5',
+                'answers' => '1'
+            ],
+
+            [
+                'question_id' => '16',
+                'answer_id' => '96',
+                'user_id' => 'test5',
+                'answers' => 'non'
+            ],
+
+            [
+                'question_id' => '17',
+                'answer_id' => '97',
+                'user_id' => 'test5',
+                'answers' => 'non'
+            ],
+
+            [
+                'question_id' => '18',
+                'answer_id' => '98',
+                'user_id' => 'test5',
+                'answers' => '3'
+            ],
+
+            [
+                'question_id' => '19',
+                'answer_id' => '99',
+                'user_id' => 'test5',
+                'answers' => '1'
+            ],
+
+            [
+                'question_id' => '20',
+                'answer_id' => '100',
+                'user_id' => 'test5',
+                'answers' => 'Rien'
             ],
         ];
 

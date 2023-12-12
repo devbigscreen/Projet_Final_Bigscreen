@@ -36,8 +36,8 @@ export default function List(props) {
         <TableHead>
           <TableRow>
             <StyledTableCell>N°</StyledTableCell>
-            <StyledTableCell align="right">Question</StyledTableCell>
-            <StyledTableCell align="right">{ props.view === 'questions' ? 'Type' : 'Answers' }</StyledTableCell>          
+            <StyledTableCell align="center">Question</StyledTableCell>
+            <StyledTableCell align="center">{ props.view === 'questions' ? 'Type' : 'Answers' }</StyledTableCell>          
           </TableRow>
         </TableHead>
         <TableBody>
@@ -46,11 +46,11 @@ export default function List(props) {
               <StyledTableCell component="th" scope="row">
                 {question.question_id}
               </StyledTableCell>
-              <StyledTableCell align="right">{ question.body }</StyledTableCell>
+              <StyledTableCell align="center">{ question.body }</StyledTableCell>
               {props.view === "questions" ? 
-                <StyledTableCell align="right">{ question.type }</StyledTableCell>
+                <StyledTableCell align="center">{ question.type }</StyledTableCell>
                 :
-                <StyledTableCell align="right">{ props.userDatas[index].answers }</StyledTableCell>
+                <StyledTableCell align="center">{ props.userDatas[index].answers }</StyledTableCell>
               }
             </StyledTableRow>
           ))}
