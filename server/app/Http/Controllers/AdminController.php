@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Admin;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 class AdminController extends Controller
 {
     /**
-     * Login user
+     * Login admin
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -24,11 +24,11 @@ class AdminController extends Controller
 
         if (!Auth::attempt($credentials)) {
             return response()->json([
-                'message' => 'Authentication failed',
+                'message' => 'Authentification failed'
             ], 401);
         }
 
-        $admin = Admin::where('email', $request->email)->first();
+        $admin = User::where('email', $request->email)->first();
         $token = $admin->createToken("token")->plainTextToken;
         return response()->json([
             'message' => 'Successfully Authentication',
@@ -45,7 +45,7 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $admin = new Admin();
+        $admin = new User();
         $admin->email= $request->input('email');
         $admin->password = $request->input('password');
 
@@ -64,7 +64,7 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        $admin = Admin::where('id', $id)->first();
+        $admin = User::where('id', $id)->first();
 
         if (!$admin) {
             return response()->json([

@@ -4,7 +4,8 @@ import 'chart.js/auto'
 import { useState, useEffect } from "react";
 import { getAllAnswers, getAllQuestions } from "../services/requests";
 import { Pie, Radar } from "react-chartjs-2";
-import {Chart, ArcElement, Tooltip, Legend} from 'chart.js'
+import {Chart, ArcElement, Tooltip, Legend} from 'chart.js';
+import CheckAuth from '../components/CheckAuth';
 
 const Home = () => {
   let [answersDatas, setAnswersDatas] = useState([]);
@@ -106,6 +107,7 @@ const Home = () => {
   
   return (
     <div role="region" className="homepage">
+      <CheckAuth />
       <Navbar />
       <div role="region">
         <h1>Bienvenue Admin !</h1>

@@ -1,5 +1,6 @@
 /* eslint-disable no-useless-catch */
 import axios from "axios";
+import { removeTokenLocalStorage, setTokenLocalStorage } from "./localStorage";
 
 const url = "http://127.0.0.1:8000/api";
 
@@ -26,6 +27,22 @@ export async function getOneUserAnswers(userId){
     const response = await axios.get(`${url + "/user/answers/" + userId}`);
     return response;
   } catch (error) {
+    throw error;
+  }
+}
+
+export async function login(email, password) {
+  try {
+    const response = await axios.post(`${url + "/admin/login"}`, {
+      email: email,
+      password: password,
+    });
+
+    setTokenLocalStorage(response.data.token);
+
+    return response;
+  } catch (error) {
+    removeTokenLocalStorage();
     throw error;
   }
 }
