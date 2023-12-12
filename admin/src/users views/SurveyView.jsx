@@ -1,31 +1,31 @@
 import  { useState, useEffect } from "react";
 import "../css/formulaires.css";
 
+import Survey from '../components/Survey';
+import { getAllQuestions } from '../services/requests';
 
 
+function SurveyView () {
+  let [questionsDatas, setQuestionsDatas] = useState([]);
+ 
+    useEffect(() => {
 
+      getAllQuestions().then((res)=>{
+setQuestionsDatas(res.data.data)
 
-function FormView () {
-
-  // const question: React.FC = props => {
-  //   useEffect(() => {
-  //     (async function getAllQuestions() {
-  //       await axios.get(`${url + "/questions/get"}`);
-  //     })();
-  //   }, []);  
+      })
+    }, []);  
     
-  //   return <div></div>;
-  // };
-
+  console.log(questionsDatas)
 
 return (
   <div role="region" className="survey">
-{/* <Survey/> */}
+ {/* <Survey/>  */}
   </div>
 
 
  );
-};
+}
 
 
-export default FormView ;
+export default SurveyView ;
