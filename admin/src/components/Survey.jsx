@@ -8,13 +8,13 @@ import Button from '@mui/material/Button';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 
-import { useEffect } from 'react';
-
  const Survey = (props) => {
 
+  const steps = props.questions;
 
-
-  const steps = props.questionsDatas;
+  if (!steps || steps.length === 0) {
+    return <span>Loading... Please wait...</span>;
+  }
 
 
   const theme = useTheme();
@@ -48,7 +48,7 @@ import { useEffect } from 'react';
         <Typography>{steps[activeStep].label}</Typography>
       </Paper>
       <Box sx={{ height: 255, maxWidth: 400, width: '100%', p: 2 }}>
-        {steps[activeStep].input}
+        {steps[activeStep].description}
       </Box>
       <MobileStepper
         variant="text"
