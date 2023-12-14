@@ -29,9 +29,12 @@ class UserController extends Controller
             'url' => 'required',
         ]);
 
+        $requestUrl = $request->input('url');
+        $answersUrl = $requestUrl . $userId;
+
         $userUrl = new UserUrl();
         $userUrl->user_id = $userId;
-        $userUrl->url = $request->input('url');
+        $userUrl->url = $answersUrl;
         $userUrl->save();
 
         $userAnswers = [];

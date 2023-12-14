@@ -17,7 +17,7 @@ function App() {
             
             <Route path='/home' element={<Home />}/>
             <Route path='/questions' element={<QuestionsList/>}/>
-            <Route path='/answers' element={<AnswersList/>}/>
+            <Route path='/answers/:id' element={<AnswersList/>}/>
             <Route path='/survey' element={<SurveyView/>}/>
           </Routes>
         </BrowserRouter> 

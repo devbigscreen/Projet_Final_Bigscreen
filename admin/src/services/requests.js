@@ -2,11 +2,12 @@
 import axios from "axios";
 import { removeTokenLocalStorage, setTokenLocalStorage } from "./localStorage";
 
-const url = "http://127.0.0.1:8000/api";
+const serverUrl = "http://127.0.0.1:8000/api";
+const userUrl = "http://localhost:5173/answers/";
 
 export async function getAllAnswers() {
   try {
-    const response = await axios.get(`${url + "/users/answers"}`);
+    const response = await axios.get(`${serverUrl + "/users/answers"}`);
     return response;
   } catch (error) {
     throw error;
@@ -15,16 +16,18 @@ export async function getAllAnswers() {
 
 export async function getAllQuestions() {
   try {
-    const response = await axios.get(`${url + "/questions/get"}`);
+    const response = await axios.get(`${serverUrl + "/questions/get"}`);
     return response;
   } catch (error) {
     throw error;
   }
 }
 
-export async function getOneUserAnswers(userId){
+export async function getOneUserAnswers(userId) {
   try {
-    const response = await axios.get(`${url + "/user/answers/" + userId}`);
+    const response = await axios.get(
+      `${serverUrl + "/user/answers/" + userId}`
+    );
     return response;
   } catch (error) {
     throw error;
@@ -33,7 +36,7 @@ export async function getOneUserAnswers(userId){
 
 export async function login(email, password) {
   try {
-    const response = await axios.post(`${url + "/admin/login"}`, {
+    const response = await axios.post(`${serverUrl + "/admin/login"}`, {
       email: email,
       password: password,
     });
@@ -43,6 +46,18 @@ export async function login(email, password) {
     return response;
   } catch (error) {
     removeTokenLocalStorage();
+    throw error;
+  }
+}
+
+export async function addUserDb(userAnswers) {
+  try {
+    const response = await axios.post(`${serverUrl + "/user/add"}`, {
+      answers: userAnswers,
+      url: userUrl,
+    });
+    return response;
+  } catch (error) {
     throw error;
   }
 }

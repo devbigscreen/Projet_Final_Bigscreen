@@ -46,7 +46,7 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         $admin = new User();
-        $admin->email= $request->input('email');
+        $admin->email = $request->input('email');
         $admin->password = $request->input('password');
 
         $admin->password = Hash::make($request->input('password'));
@@ -78,5 +78,4 @@ class AdminController extends Controller
             'message' => 'Admin deleted successfully!',
         ]);
     }
-
 }
