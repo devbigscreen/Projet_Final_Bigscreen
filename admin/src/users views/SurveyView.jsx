@@ -16,11 +16,11 @@ function SurveyView() {
   function generateCheckboxChoices(question) {
     const choices = Object.values(question.choices);
     return (
-      <fieldset>
+      <fieldset id={question.question_id}>
         <legend>Select one answer :</legend>
         {choices.map((choice, index) => (
           <div role="region" key={index}>
-            <input type="radio" id={choice} name="choice" value={choice}/>
+            <input type="radio" id={choice} name="choice" value={choice} />
             <label htmlFor={choice}>{choice}</label>
           </div>
         ))}
@@ -29,18 +29,18 @@ function SurveyView() {
   }
 
   function generateTextInput(question) {
-    if(question.question_id === 1){
-      return <input type="email" id="email" name="email" />
-    }else{
-      return <input type="text" maxLength="225" />;
+    if (question.question_id === 1) {
+      return <input type="email" id={question.question_id} name="email" />;
+    } else {
+      return <input type="text" id={question.question_id} maxLength="225" />;
     }
   }
 
-  function generateSelectChoices() {
+  function generateSelectChoices(question) {
     return (
       <>
         <label htmlFor="choices">Choose between 1 and 5 :</label>
-        <select id="choices" name="choices">
+        <select id={question.question_id} name="choices">
           {[1, 2, 3, 4, 5].map((value, index) => (
             <option key={index} value={value}>
               {value}
@@ -62,24 +62,29 @@ function SurveyView() {
           inputsArray.push(generateTextInput(question));
           break;
         case "c":
-          inputsArray.push(generateSelectChoices());
+          inputsArray.push(generateSelectChoices(question));
           break;
       }
     });
     return inputsArray;
   }
 
-  function generateQuestionsDatasArray(){
+  function generateQuestionsDatasArray() {
     let questionsInputs = generateInputsArray();
     let propsDatasArray = [];
 
-    questionsInputs.forEach((input, index)=>{
-      propsDatasArray.push(
-        {
-          "label" : questionsDatas[index].body,
-          "description" : input
-        }
-      )
+    questionsInputs.forEach((input, index) => {
+      propsDatasArray.push({
+        label: questionsDatas[index].body,
+        description: input,
+        id: index + 1,
+      });
+    });
+
+    propsDatasArray.push({
+      label: "Submit your answers !",
+      description: "",
+      id: 21
     });
 
     return propsDatasArray;
@@ -87,7 +92,7 @@ function SurveyView() {
 
   return (
     <div role="region" className="survey">
-      <Survey questions={generateQuestionsDatasArray()}/> 
+      <Survey questions={generateQuestionsDatasArray()} />
     </div>
   );
 }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 class AdminController extends Controller
 {
     /**
-     * Login admin
+     * Login user
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -24,14 +24,14 @@ class AdminController extends Controller
 
         if (!Auth::attempt($credentials)) {
             return response()->json([
-                'message' => 'Authentification failed'
+                'message' => 'Authentification failed',
             ], 401);
         }
 
-        $admin = User::where('email', $request->email)->first();
+        $admin = Admin::where('email', $request->email)->first();
         $token = $admin->createToken("token")->plainTextToken;
         return response()->json([
-            'message' => 'Successfully Authentication',
+            'message' => 'Successfully Authentification',
             'token' => $token
         ]);
     }
@@ -45,8 +45,8 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $admin = new User();
-        $admin->email= $request->input('email');
+        $admin = new Admin();
+        $admin->email = $request->input('email');
         $admin->password = $request->input('password');
 
         $admin->password = Hash::make($request->input('password'));
@@ -56,6 +56,7 @@ class AdminController extends Controller
         ]);
     }
 
+
     /**
      * Remove the specified admin from the database.
      *
@@ -64,7 +65,7 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        $admin = User::where('id', $id)->first();
+        $admin = Admin::where('id', $id)->first();
 
         if (!$admin) {
             return response()->json([
@@ -78,5 +79,4 @@ class AdminController extends Controller
             'message' => 'Admin deleted successfully!',
         ]);
     }
-
 }

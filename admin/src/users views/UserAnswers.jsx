@@ -8,6 +8,7 @@ const AnswersList = () => {
   let [userAnswers, setUserAnswers] = useState([]);
 
   useEffect(() => {
+    
     getAllQuestions().then((res) => {
       setQuestionsDatas(res.data.data);
     });
@@ -15,9 +16,13 @@ const AnswersList = () => {
     getOneUserAnswers('test2').then((res) => {
       setUserAnswers(res.data.data);
     });
+
   }, []);
 
+
+
   return (
+    
     <List
       questionsDatas={questionsDatas}
       view="answers"
