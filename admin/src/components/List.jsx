@@ -29,9 +29,12 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 export default function List(props) {
+  const shouldRender =
+    (props.view === "questions" ? props.questionsDatas : props.userDatas && props.questionsDatas) !== null;
+
   return (
     <TableContainer component={Paper}>
-      {props.userDatas && (
+      {shouldRender &&(
         <Table sx={{ minWidth: 900 }} aria-label="customized table">
           <TableHead>
             <TableRow>
@@ -44,7 +47,7 @@ export default function List(props) {
           </TableHead>
           <TableBody>
             {props.questionsDatas.map((question, index) => (
-              <StyledTableRow key={index}>
+              <StyledTableRow key={question.question_id}>
                 <StyledTableCell component="th" scope="row">
                   {question.question_id}
                 </StyledTableCell>
@@ -57,7 +60,7 @@ export default function List(props) {
                   </StyledTableCell>
                 ) : (
                   <StyledTableCell align="center">
-                    {props.userDatas[index] ? props.userDatas[index].answers : ''}
+                    {props.userDatas[index] && props.userDatas[index].answers}
                   </StyledTableCell>
                 )}
               </StyledTableRow>

@@ -5,6 +5,7 @@ import Home from './admin views/Home'
 import QuestionsList from './admin views/QuestionsList';
 import AnswersList from './users views/UserAnswers';
 import SurveyView from './users views/SurveyView';
+import AllUsersAnswers from './admin views/AllUsersAnswers';
 
 function App() {
   return (
@@ -17,8 +18,9 @@ function App() {
             
             <Route path='/home' element={<Home />}/>
             <Route path='/questions' element={<QuestionsList/>}/>
-            <Route path='/answers/:id' element={<AnswersList/>}/>
+            <Route path='/user/answers/:id' element={<AnswersList/>}/>
             <Route path='/survey' element={<SurveyView/>}/>
+            <Route path='/admin/all/answers' element={<AllUsersAnswers/>}/>
           </Routes>
         </BrowserRouter> 
       

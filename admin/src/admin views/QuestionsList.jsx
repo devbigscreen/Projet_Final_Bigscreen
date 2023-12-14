@@ -13,12 +13,16 @@ const QuestionsList = () => {
     });
   }, []);
 
+  console.log(questionsDatas)
+
   return (
     <div role="region" className="listPage">
       <Navbar/>
       <div className="list" role="region">
         <h1>Questionnaire !</h1>
+        {questionsDatas &&
         <List questionsDatas={questionsDatas} view='questions'/>
+        }
       </div>
     </div>
   );
