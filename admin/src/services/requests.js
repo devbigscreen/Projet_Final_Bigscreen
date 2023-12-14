@@ -7,7 +7,9 @@ const userUrl = "http://localhost:5173/answers/";
 
 export async function getAllAnswers() {
   try {
-    const response = await axios.get(`${serverUrl + "/users/answers"}`);
+    const response = await axios.get(`${serverUrl + "/users/answers"}`, {
+      timeout: 5000,
+    });
     return response;
   } catch (error) {
     throw error;

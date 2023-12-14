@@ -23,6 +23,12 @@ const Survey = (props) => {
   const [saveAnswers, setSaveAnswers] = useState([]);
   const maxSteps = steps.length;
 
+  function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    return emailRegex.test(email);
+  }
+
   const updateAnswersState = (questionId, inputValue) => {
     let newArray = [...saveAnswers];
     newArray.splice(questionId, 0, inputValue);
@@ -46,10 +52,19 @@ const Survey = (props) => {
         span.innerHTML = "";
       }
       return (span.innerHTML = "Please answer the question");
-    } else {
+    } else if(input.type === "email"){
+      if (!isValidEmail(input.value)) {
+        return (span.innerHTML = "Please enter a valid email");
+      }else{
+        updateAnswersState(steps[activeStep].id, input.value);
+        span.innerHTML = "";
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+      }
+    }else{
       if (input.value === "" || input.value === null) {
         return (span.innerHTML = "Please answer the question");
-      } else {
+      }else{
+        console.log(input.type)
         updateAnswersState(steps[activeStep].id, input.value);
         span.innerHTML = "";
         setActiveStep((prevActiveStep) => prevActiveStep + 1);

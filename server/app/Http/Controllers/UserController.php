@@ -157,4 +157,28 @@ class UserController extends Controller
             'message' => 'UserUrl and associated UserAnswers deleted successfully!',
         ]);
     }
+
+    /**
+     * Check if the email entered by the user exists in the database.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function checkIfEmailExist(Request $request)
+    {
+        $email = trim($request->input('email'));
+        $userEmail = UserAnswers::where('question_id', 1)
+            ->where('answers', $email)
+            ->first();
+            if ($userEmail) {
+                return response()->json([
+                    'message' => 'Email already exists!',
+                    'result' => $userEmail
+                ]);
+            } else {
+                return response()->json([
+                    'message' => 'Email does not exist.',
+                    'result' => null
+                ]);
+            }
+    }
 }

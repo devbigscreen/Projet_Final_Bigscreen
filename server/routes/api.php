@@ -41,4 +41,5 @@ Route::get('/users/answers', [UserController::class, 'getAllUsersAnswers']);
 Route::get('/user/answers/{id}', [UserController::class, 'getOneUserAnswers']);
 Route::get('/user/url/{id}', [UserController::class, 'getUserUrl']);
 Route::delete('/user/delete/{id}', [UserController::class, 'destroy']);
+Route::post('/users/check/email', [UserController::class, 'checkIfEmailExist']);
 

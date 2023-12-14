@@ -30,7 +30,7 @@ function SurveyView() {
 
   function generateTextInput(question) {
     if (question.question_id === 1) {
-      return <input type="email" id={question.question_id} name="email" />;
+      return <input type="email" id={question.question_id} name="email" pattern=".+@.\.com"/>;
     } else {
       return <input type="text" id={question.question_id} maxLength="225" />;
     }
