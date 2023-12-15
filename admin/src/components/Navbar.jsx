@@ -27,11 +27,6 @@ export default function Navbar() {
     setAnchorEl(null);
   };
 
-  const logout = () => {
-    removeTokenLocalStorage();
-    navigate('/');
-  };
-
   const options = [
     <Link className="navLink" to={"/home"}>
       <HomeOutlinedIcon fontSize="large" />
@@ -45,7 +40,7 @@ export default function Navbar() {
       <ViewListOutlinedIcon fontSize="large" />
       Answers
     </Link>,
-    <Link className="navLink" onClick={logout}>
+    <Link className="navLink" onClick={removeTokenLocalStorage} to={"/"}>
       <LogoutIcon fontSize="large" className="logout" />
       Logout
     </Link>,

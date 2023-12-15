@@ -1,5 +1,10 @@
 .nav{
     max-width: 8rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
 }
 
 .css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper{

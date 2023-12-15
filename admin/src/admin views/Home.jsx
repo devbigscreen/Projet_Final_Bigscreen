@@ -11,7 +11,7 @@ const Home = () => {
   let [answersDatas, setAnswersDatas] = useState([]);
   let [questionsDatas, setQuestionsDatas] = useState([]);
   Chart.register(ArcElement, Tooltip, Legend);
-  Chart.defaults.font.size = 12;
+  Chart.defaults.font.size = 10;
 
   useEffect(() => {
     getAllAnswers().then((res) => {
@@ -97,7 +97,8 @@ const Home = () => {
         {
           label: JSON.stringify(question),
           data: countsAnswersArray,
-          borderColor: 'rgba(75,192,192,1)',
+          backgroundColor: 'rgba(54, 162, 235,0.4)',
+          borderColor: '#36A2EB',
           borderWidth: 1,
         },
       ],
@@ -121,18 +122,9 @@ const Home = () => {
       legend: {
         display: true,
         position: 'top',
-        labels: {
-          fontSize: 2,
-        },
       },
     },
-    scales: {
-      r: {
-        pointLabels: {
-          fontSize: 2,
-        },
-      },
-    },
+    responsive: true
   };
   
   return (

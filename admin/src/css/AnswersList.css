@@ -1,11 +1,50 @@
-.answersPage{
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-}
-
 .list{
     display: flex;
     flex-flow: column;
     align-items: center;
+    width: 60rem;
+    justify-content: center;
+    margin: auto;
+    padding-left: 8rem;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+    row-gap: 4rem;
 }
+
+.listUserView{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 60rem;
+    justify-content: center;
+    margin: auto;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+}
+
+h1 {
+    position: fixed;
+    top: 0;
+    margin: 0;
+    padding-left: 8rem;
+    transform: translateX(-50%);
+    background-color: #fff;
+    width: 100%;
+    z-index: 1;
+    padding: 1rem;
+    color: #384454;
+  }
+
+  .css-1wvnaxz-MuiTableCell-root.MuiTableCell-head{
+    background-color: #384454 !important;
+    font-weight: bold;
+  }
+
+  .css-og52vs-MuiTableCell-root.MuiTableCell-head{
+    background-color: #384454 !important;
+    font-weight: bold;
+  }
+
+  .css-1enotpu-MuiTableRow-root:nth-of-type(2n+1){
+    background-color: rgba( 56, 68, 84,0.1) !important;
+  }

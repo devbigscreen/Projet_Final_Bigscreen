@@ -2,7 +2,7 @@ import List from "../components/List";
 import "../css/AnswersList.css";
 import { useEffect, useState } from "react";
 import { getAllAnswers, getAllQuestions } from "../services/requests";
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
 const AnswersList = () => {
@@ -12,7 +12,6 @@ const AnswersList = () => {
   let userId = params.id;
 
   useEffect(() => {
-    
     getAllQuestions().then((res) => {
       setQuestionsDatas(res.data.data);
     });
@@ -22,21 +21,23 @@ const AnswersList = () => {
     });
   }, []);
 
-
   return (
-    
     <>
-    <Navbar />
-  {usersAnswers && questionsDatas &&
-    usersAnswers.map((list, index) => (
-      <List
-        key={index}
-        questionsDatas={questionsDatas}
-        view="answers"
-        userDatas={list}
-      />
-    ))}
-</>
+      <Navbar />
+      <h1>All answers</h1>
+      <section className="list">
+        {usersAnswers &&
+          questionsDatas &&
+          usersAnswers.map((list, index) => (
+            <List
+              key={index}
+              questionsDatas={questionsDatas}
+              view="answers"
+              userDatas={list}
+            />
+          ))}
+      </section>
+    </>
   );
 };
 

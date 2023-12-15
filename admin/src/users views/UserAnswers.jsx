@@ -2,7 +2,7 @@ import List from "../components/List";
 import "../css/AnswersList.css";
 import { useEffect, useState } from "react";
 import { getAllQuestions, getOneUserAnswers } from "../services/requests";
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
 const AnswersList = () => {
   let [questionsDatas, setQuestionsDatas] = useState([]);
@@ -11,7 +11,6 @@ const AnswersList = () => {
   let userId = params.id;
 
   useEffect(() => {
-    
     getAllQuestions().then((res) => {
       setQuestionsDatas(res.data.data);
     });
@@ -19,18 +18,16 @@ const AnswersList = () => {
     getOneUserAnswers(userId).then((res) => {
       setUserAnswers(res.data.data);
     });
-
   }, []);
 
-
-
   return (
-    
-    <List
-      questionsDatas={questionsDatas}
-      view="answers"
-      userDatas={userAnswers}
-    />
+    <section className="listUserView">
+      <List
+        questionsDatas={questionsDatas}
+        view="answers"
+        userDatas={userAnswers}
+      />
+    </section>
   );
 };
 
