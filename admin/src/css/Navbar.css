@@ -1,6 +1,23 @@
 .nav{
     max-width: 8rem;
+}
+
+.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper{
+    width: 8rem;
+    left: 0 !important;
+}
+
+.navLink{
+    color: var(--main-color);
     display: flex;
-    flex-flow: column;
-    min-height: 100vh;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.4rem;
+    margin-left: -0.7rem;
+    font-weight: bold;
+}
+
+.navLink:hover{
+    color: var(--main-color);
 }
