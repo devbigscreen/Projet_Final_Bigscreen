@@ -3,11 +3,11 @@ import "../css/AnswersList.css";
 import { useEffect, useState } from "react";
 import { getAllAnswers, getAllQuestions } from "../services/requests";
 import { useParams } from 'react-router-dom';
+import Navbar from "../components/Navbar";
 
 const AnswersList = () => {
   let [questionsDatas, setQuestionsDatas] = useState([]);
   let [usersAnswers, setUsersAnswers] = useState([]);
-  let [allListsDatas, setAllListsDatas] = useState([]);
   let params = useParams();
   let userId = params.id;
 
@@ -20,27 +20,15 @@ const AnswersList = () => {
     getAllAnswers(userId).then((res) => {
       setUsersAnswers(res.data.data);
     });
-
-    const subArrayLength = 20;
-
-    const listsArrays = [];
-    for (let i = 0; i < usersAnswers.length; i += subArrayLength) {
-    const newListArray = usersAnswers.slice(i, i + subArrayLength);
-    listsArrays.push(newListArray);
-    };
-
-    setAllListsDatas(listsArrays);
-
-    console.log(allListsDatas)
-
   }, []);
 
 
   return (
     
     <>
-  {allListsDatas && questionsDatas &&
-    allListsDatas.map((list, index) => (
+    <Navbar />
+  {usersAnswers && questionsDatas &&
+    usersAnswers.map((list, index) => (
       <List
         key={index}
         questionsDatas={questionsDatas}

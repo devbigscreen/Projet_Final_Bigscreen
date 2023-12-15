@@ -9,6 +9,7 @@ use App\Models\UserUrl;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Str;
 
+use function PHPSTORM_META\type;
 
 class UserController extends Controller
 {
@@ -75,10 +76,13 @@ class UserController extends Controller
      */
     public function getAllUsersAnswers()
     {
-        $usersAnswers = UserAnswers::all();
+        $usersAnswers = UserAnswers::all()->toArray();
+
+        $newArray = array_chunk($usersAnswers, 20);
+
         return response()->json([
             'message' => 'User to recover!',
-            'data' => $usersAnswers
+            'data' => $newArray
         ]);
     }
 
