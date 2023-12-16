@@ -47,43 +47,58 @@ export default function Navbar() {
   ];
 
   return (
-    <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', height: '100vh' }} className="nav">
-    <AppBar position="static" sx={{ height: '100%', backgroundColor: '#36A2EB' }}>
-      <Toolbar sx={{ alignItems: 'center' }}>
-        <IconButton
-          size="large"
-          edge="start"
-          color="inherit"
-          aria-label="menu"
-          sx={{ mr: 2, margin: 'auto' }}
-          aria-owns={open ? "long-menu" : undefined}
-          aria-haspopup="true"
-          onClick={handleClickListItem}
-        >
-          <MenuIcon />
-        </IconButton>
-      </Toolbar>
-    </AppBar>
-
-    <div>
-      <Menu
-        id="long-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        sx={{ margin: 'auto' }}
+    <Box
+      sx={{
+        flexGrow: 1,
+        display: "flex",
+        flexDirection: "column",
+        height: "100vh",
+      }}
+      className="nav"
+    >
+      <AppBar
+        position="static"
+        sx={{ height: "100%", backgroundColor: "#36A2EB" }}
       >
-        {options.map((option, index) => (
-          <MenuItem
-            key={index}
-            selected={option === "Pyxis"}
-            onClick={handleClose}
+        <Toolbar sx={{ alignItems: "center", justifyContent: "center" }}>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{
+              "@media (max-width: 1100px)": {
+                marginLeft: "auto",
+              },
+            }}
+            aria-owns={open ? "long-menu" : undefined}
+            aria-haspopup="true"
+            onClick={handleClickListItem}
           >
-            {option}
-          </MenuItem>
-        ))}
-      </Menu>
-    </div>
-  </Box>
+            <MenuIcon />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+
+      <div>
+        <Menu
+          id="long-menu"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          sx={{ margin: "auto" }}
+        >
+          {options.map((option, index) => (
+            <MenuItem
+              key={index}
+              selected={option === "Pyxis"}
+              onClick={handleClose}
+            >
+              {option}
+            </MenuItem>
+          ))}
+        </Menu>
+      </div>
+    </Box>
   );
 }

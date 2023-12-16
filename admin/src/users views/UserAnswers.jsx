@@ -21,6 +21,11 @@ const AnswersList = () => {
   }, []);
 
   return (
+    <>
+    <nav className="userAnswersNav">
+      <img src="" alt="Logo" />
+      <h1>Your answers</h1>
+    </nav>
     <section className="listUserView">
       <List
         questionsDatas={questionsDatas}
@@ -28,6 +33,7 @@ const AnswersList = () => {
         userDatas={userAnswers}
       />
     </section>
+    </>
   );
 };
 
