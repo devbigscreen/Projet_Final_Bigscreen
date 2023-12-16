@@ -2,14 +2,14 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import { useTheme } from "@mui/material/styles";
 import MobileStepper from "@mui/material/MobileStepper";
-import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
-
+import "../css/survey.css";
 import { useState } from "react";
 import { addUserDb } from "../services/requests";
+import logoNoir2 from "../images/logoNoir2.png";
 
 const Survey = (props) => {
   const steps = props.questions;
@@ -25,7 +25,7 @@ const Survey = (props) => {
 
   function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
+
     return emailRegex.test(email);
   }
 
@@ -52,19 +52,19 @@ const Survey = (props) => {
         span.innerHTML = "";
       }
       return (span.innerHTML = "Please answer the question");
-    } else if(input.type === "email"){
+    } else if (input.type === "email") {
       if (!isValidEmail(input.value)) {
         return (span.innerHTML = "Please enter a valid email");
-      }else{
+      } else {
         updateAnswersState(steps[activeStep].id, input.value);
         span.innerHTML = "";
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
       }
-    }else{
+    } else {
       if (input.value === "" || input.value === null) {
         return (span.innerHTML = "Please answer the question");
-      }else{
-        console.log(input.type)
+      } else {
+        console.log(input.type);
         updateAnswersState(steps[activeStep].id, input.value);
         span.innerHTML = "";
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -92,68 +92,74 @@ const Survey = (props) => {
   };
 
   return (
-    <div className="boxContainer">
-      <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
-        <Paper
-          square
-          elevation={0}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            height: 50,
-            pl: 2,
-            bgcolor: "background.default",
-          }}
-        >
-          <Typography>{steps[activeStep].label}</Typography>
-        </Paper>
-        <Box sx={{ height: 255, maxWidth: 400, width: "100%", p: 2 }}>
-          {steps[activeStep].description}
-          {activeStep === 20 ? (
-            <Button size="small" onClick={submitAnswers}>
-              Submit
-            </Button>
-          ) : (
-            ""
-          )}
-          <span id="boxSpan"></span>
-        </Box>
-        <MobileStepper
-          variant="text"
-          steps={maxSteps}
-          position="static"
-          activeStep={activeStep}
-          nextButton={
-            <Button
-              size="small"
-              onClick={handleNext}
-              disabled={activeStep === maxSteps - 1}
-            >
-              Next
-              {theme.direction === "rtl" ? (
-                <KeyboardArrowLeft />
+    <>
+      <Box className="globaleBox">
+        <img src={logoNoir2} className="logoNoir2" alt="logo" />
+
+        <div className="surAskCtner">
+          <Box className="surveyTypographyTitle">
+            <Typography variant="h5" sx={{ maxWidth: 480 }}>
+              Survey : Give us next iteration feedback
+            </Typography>
+          </Box>
+          <Box className="survAsks " sx={{ maxWidth: 480, flexGrow: 1 }}>
+            <Typography variant="h5" className="survAsksLabes">
+              {steps[activeStep].label}
+            </Typography>
+            <Box sx={{ height: 320, maxWidth: 480, p: 2 }}>
+              {" "}
+              {steps[activeStep].description}
+              {activeStep === 20 ? (
+                <Button size="small" onClick={submitAnswers}>
+                  <Typography variant="h5" className="submitButton">
+                    Submit
+                  </Typography>
+                </Button>
               ) : (
-                <KeyboardArrowRight />
+                ""
               )}
-            </Button>
-          }
-          backButton={
-            <Button
-              size="small"
-              onClick={handleBack}
-              disabled={activeStep === 0}
-            >
-              {theme.direction === "rtl" ? (
-                <KeyboardArrowRight />
-              ) : (
-                <KeyboardArrowLeft />
-              )}
-              Back
-            </Button>
-          }
-        />
+              <span id="boxSpan"></span>
+            </Box>
+
+            <MobileStepper
+              variant="text"
+              steps={maxSteps}
+              position="static"
+              activeStep={activeStep}
+              nextButton={
+                <Button
+                  size="small"
+                  onClick={handleNext}
+                  disabled={activeStep === maxSteps - 1}
+                >
+                  {" "}
+                  Next
+                  {theme.direction === "rtl" ? (
+                    <KeyboardArrowLeft />
+                  ) : (
+                    <KeyboardArrowRight />
+                  )}
+                </Button>
+              }
+              backButton={
+                <Button
+                  size="small"
+                  onClick={handleBack}
+                  disabled={activeStep === 0}
+                >
+                  {theme.direction === "rtl" ? (
+                    <KeyboardArrowRight />
+                  ) : (
+                    <KeyboardArrowLeft />
+                  )}
+                  Back
+                </Button>
+              }
+            />
+          </Box>
+        </div>
       </Box>
-    </div>
+    </>
   );
 };
 

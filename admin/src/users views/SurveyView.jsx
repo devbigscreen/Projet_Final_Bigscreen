@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import "../css/formulaires.css";
-
+import "../css/survey.css";
 import Survey from "../components/Survey";
 import { getAllQuestions } from "../services/requests";
+import "../css/surveyView.css";
 
 function SurveyView() {
   let [questionsDatas, setQuestionsDatas] = useState([]);
@@ -16,10 +17,10 @@ function SurveyView() {
   function generateCheckboxChoices(question) {
     const choices = Object.values(question.choices);
     return (
-      <fieldset id={question.question_id}>
-        <legend>Select one answer :</legend>
+      <fieldset className="radioInput" id={question.question_id}>
+        <legend className="legend">Select one answer :</legend>
         {choices.map((choice, index) => (
-          <div role="region" key={index}>
+          <div className="choiceRadio" role="region" key={index}>
             <input type="radio" id={choice} name="choice" value={choice} />
             <label htmlFor={choice}>{choice}</label>
           </div>
@@ -30,17 +31,38 @@ function SurveyView() {
 
   function generateTextInput(question) {
     if (question.question_id === 1) {
-      return <input type="email" id={question.question_id} name="email" pattern=".+@.\.com"/>;
+      return (
+        <input
+          className="enterEmail"
+          type="email"
+          id={question.question_id}
+          name="email"
+          pattern=".+@.\.com"
+        />
+      );
     } else {
-      return <input type="text" id={question.question_id} maxLength="225" />;
+      return (
+        <input
+          className="yearInput"
+          type="text"
+          id={question.question_id}
+          maxLength="225"
+        />
+      );
     }
   }
 
   function generateSelectChoices(question) {
     return (
       <>
-        <label htmlFor="choices">Choose between 1 and 5 :</label>
-        <select id={question.question_id} name="choices">
+        <label className="titleChoose" htmlFor="choices">
+          Choose between 1 and 5 :
+        </label>
+        <select
+          className="selectchoices"
+          id={question.question_id}
+          name="choices"
+        >
           {[1, 2, 3, 4, 5].map((value, index) => (
             <option key={index} value={value}>
               {value}
@@ -84,7 +106,7 @@ function SurveyView() {
     propsDatasArray.push({
       label: "Submit your answers !",
       description: "",
-      id: 21
+      id: 21,
     });
 
     return propsDatasArray;

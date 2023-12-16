@@ -1,85 +1,79 @@
+/*Style de la section Connexionformulaire*/
 
- 
-/*Style de la section ConnexionformulaireCtnr*/
-.ConnexionformulaireCtnr .connexion{
- width: 360px;
- padding: 8% 0 0;
-
-  margin:0 auto;
- margin-top: 20px;
- border-bottom: solid 1px black;
- text-align: center;
- color: #000000;
- font-size: 16px;
+.Connexionform {
+  max-width: 380px;
+  margin: 0 auto;
+  height: auto;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  color: #000000;
+  font-size: 1rem;
+  margin-top: 110px;
+  box-shadow: 0 0 20px 0 #37363633, 0 5px 5px 0 #0000003d;
 }
 
-.form {
-  position: relative;
-  z-index: 1;
-  background: #FFFFFF;
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 45px;
+.logoNoir {
+  width: 200px;
   text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  padding: 1rem 0 0 0;
 }
-.form input {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
+
+.formBox {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 290px;
+  margin: 2rem 2rem;
+}
+
+.formBox label {
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  padding: 1rem 0 1rem 0;
+  text-transform: uppercase;
+}
+
+.formBox input {
   background: #f2f2f2;
   width: 100%;
   border: 0;
-  margin: 0 0 15px;
-  padding: 15px;
+  margin: 0 0 1rem 0;
+  padding: 1rem;
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 1rem;
 }
 
-.form button {
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #4CAF50;
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
+.formBox button {
+  background: #36a2eb;
+  width: 140px;
+  margin: 1rem 1rem;
+  padding: 1rem 0;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1rem;
   cursor: pointer;
 }
-.form button:hover,.form button:active,.form button:focus {
-  background: #43A047;
+
+.Connect {
+  margin: 1rem 1rem 0 1rem;
 }
 
-
-
-
-.ConnexionformulaireCtnr label{
- width: 100%;
-  margin-bottom: 1rem;
-  text-align: center;
-  align-items: right;
+.form button:hover,
+.form button:active,
+.form button:focus {
+  background: #4e859d;
 }
 
-.ConnexionformulaireCtnr p {
-  text-align: center;
-  color: var(--text-black);
-  margin-top: 20px;
-
-}
-
-/*Bouton de connexion*/
-.btnConnect{
-  padding: 0.5rem 2rem;
-  background-color: var( --bg-blue);
-  color: var( --text-white);
-  transition: all 0.5S;
-  font-size: 1.5rem;
-  border: none;
-}
-
-.btnConnect:hover{
-  color: var(--bg-blue);
+/* Media queries for responsiveness */
+@media screen and (max-width: 480px) {
+  .Connexionform {
+    padding: 1rem;
+    max-width: 280px;
+  }
+  .logoNoir {
+    width: 170px;
+    text-align: center;
+    padding: 0 0 2rem 0;
+  }
 }
