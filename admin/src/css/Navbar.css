@@ -1,28 +1,40 @@
-.nav{
-    max-width: 8rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
+.nav {
+  max-width: 8rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
 }
 
-.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper{
-    width: 8rem;
-    left: 0 !important;
+.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+  width: 8rem;
+  left: 0 !important;
 }
 
-.navLink{
-    color: var(--main-color);
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-    justify-content: center;
-    column-gap: 0.4rem;
-    margin-left: -0.7rem;
-    font-weight: bold;
+.navLink {
+  color: var(--main-color);
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.4rem;
+  margin-left: -0.7rem;
+  font-weight: bold;
 }
 
-.navLink:hover{
-    color: var(--main-color);
+.navLink:hover {
+  color: var(--main-color);
+}
+
+@media screen and (max-width: 1100px) {
+  .nav {
+    max-width: 100%;
+    height: auto !important;
+    flex-direction: row;
+  }
+  .css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper{
+    right: 0 !important;
+    left: auto !important;
+  }
 }

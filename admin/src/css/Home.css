@@ -30,23 +30,40 @@ body, html {
   
   .charts {
     display: flex;
-    flex-flow: row wrap;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
-    width: 80rem;
-    height: auto;
-    list-style: none;
-    padding-top: 1rem; 
-    padding-bottom: 2rem; 
-    padding-left: 8rem;
+    max-width: 100%;
     margin: auto;
+    padding-left: 8rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
   }
   
-  .chart{
-    width: 30rem;
+  .chart {
+    width: calc(33.33% - 1rem);
     height: 30rem;
   }
 
   li{
     background-color: #fff!important;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .chart {
+      width: calc(50% - 1rem);
+    }
+  }
+
+  @media screen and (max-width: 1100px){
+    .charts{
+      padding-top: 4rem;
+      padding-left: 0;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .chart {
+      width: 100%;
+    }
   }
