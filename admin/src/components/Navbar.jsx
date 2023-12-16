@@ -6,11 +6,12 @@ import MenuIcon from "@mui/icons-material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import LogoutIcon from "@mui/icons-material/Logout";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import QuizOutlinedIcon from "@mui/icons-material/QuizOutlined";
 import ViewListOutlinedIcon from "@mui/icons-material/ViewListOutlined";
+import logoNoir from "../images/logoNoir.png";
 
 import "../css/Navbar.css";
 import { removeTokenLocalStorage } from "../services/localStorage";
@@ -18,7 +19,6 @@ import { removeTokenLocalStorage } from "../services/localStorage";
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-  const navigate = useNavigate();
   const handleClickListItem = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -60,7 +60,8 @@ export default function Navbar() {
         position="static"
         sx={{ height: "100%", backgroundColor: "#36A2EB" }}
       >
-        <Toolbar sx={{ alignItems: "center", justifyContent: "center" }}>
+        <Toolbar className="toolbar" sx={{ alignItems: "center", justifyContent: "center" }}>
+          <img src={logoNoir} alt="logo" className="logoNoir"/>
           <IconButton
             size="large"
             edge="start"

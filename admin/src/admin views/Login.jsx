@@ -14,13 +14,10 @@ const Login = () => {
   }, []);
 
   const LoginHandleChange = (event) => {
-    console.log("click");
     event.preventDefault();
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
-    console.log(password);
     login(email, password).then((response) => {
-      console.log(response);
       navigate("/home");
     });
   };

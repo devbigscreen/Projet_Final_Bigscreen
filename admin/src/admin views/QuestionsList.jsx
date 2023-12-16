@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import List from "../components/List";
+import CheckAuth from "../components/CheckAuth";
 import '../css/QuestionsList.css';
 import { useEffect, useState } from "react";
 import { getAllQuestions } from "../services/requests";
@@ -13,10 +14,9 @@ const QuestionsList = () => {
     });
   }, []);
 
-  console.log(questionsDatas)
-
   return (
     <div role="region" className="listPage">
+      <CheckAuth />
       <Navbar/>
       <div className="list" role="region">
         <h1>Questionnaire !</h1>

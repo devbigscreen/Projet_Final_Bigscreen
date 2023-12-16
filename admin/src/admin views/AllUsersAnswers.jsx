@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { getAllAnswers, getAllQuestions } from "../services/requests";
 import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import CheckAuth from "../components/CheckAuth";
 
 const AnswersList = () => {
   let [questionsDatas, setQuestionsDatas] = useState([]);
@@ -23,6 +24,7 @@ const AnswersList = () => {
 
   return (
     <>
+      <CheckAuth />
       <Navbar />
       <h1>All answers</h1>
       <section className="list">
