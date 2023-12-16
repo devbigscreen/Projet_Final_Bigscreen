@@ -582,7 +582,7 @@ class UserAnswersSeeder extends Seeder
                 'question_id' => '1',
                 'answer_id' => '81',
                 'user_id' => 'test5',
-                'answers' => 'arkhaneLyon@gmail.com'
+                'answers' => 'arkaneLyon@gmail.com'
             ],
 
             [

@@ -13,6 +13,7 @@ import QuizOutlinedIcon from "@mui/icons-material/QuizOutlined";
 import ViewListOutlinedIcon from "@mui/icons-material/ViewListOutlined";
 
 import "../css/Navbar.css";
+import { removeTokenLocalStorage } from "../services/localStorage";
 
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -24,10 +25,6 @@ export default function Navbar() {
 
   const handleClose = () => {
     setAnchorEl(null);
-  };
-
-  const logout = () => {
-    console.log("deco");
   };
 
   const options = [
@@ -43,49 +40,50 @@ export default function Navbar() {
       <ViewListOutlinedIcon fontSize="large" />
       Answers
     </Link>,
-    <Link className="navLink" onClick={logout}>
+    <Link className="navLink" onClick={removeTokenLocalStorage} to={"/"}>
       <LogoutIcon fontSize="large" className="logout" />
       Logout
     </Link>,
   ];
 
   return (
-    <Box sx={{ flexGrow: 1 }} className="nav">
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-            aria-owns={open ? "long-menu" : undefined}
-            aria-haspopup="true"
-            onClick={handleClickListItem}
-          >
-            <MenuIcon />
-          </IconButton>
-        </Toolbar>
+    <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', height: '100vh' }} className="nav">
+    <AppBar position="static" sx={{ height: '100%', backgroundColor: '#36A2EB' }}>
+      <Toolbar sx={{ alignItems: 'center' }}>
+        <IconButton
+          size="large"
+          edge="start"
+          color="inherit"
+          aria-label="menu"
+          sx={{ mr: 2, margin: 'auto' }}
+          aria-owns={open ? "long-menu" : undefined}
+          aria-haspopup="true"
+          onClick={handleClickListItem}
+        >
+          <MenuIcon />
+        </IconButton>
+      </Toolbar>
+    </AppBar>
 
-        <div>
-          <Menu
-            id="long-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
+    <div>
+      <Menu
+        id="long-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        sx={{ margin: 'auto' }}
+      >
+        {options.map((option, index) => (
+          <MenuItem
+            key={index}
+            selected={option === "Pyxis"}
+            onClick={handleClose}
           >
-            {options.map((option, index) => (
-              <MenuItem
-                key={index}
-                selected={option === "Pyxis"}
-                onClick={handleClose}
-              >
-                {option}
-              </MenuItem>
-            ))}
-          </Menu>
-        </div>
-      </AppBar>
-    </Box>
+            {option}
+          </MenuItem>
+        ))}
+      </Menu>
+    </div>
+  </Box>
   );
 }

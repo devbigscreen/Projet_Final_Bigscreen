@@ -11,6 +11,7 @@ const Home = () => {
   let [answersDatas, setAnswersDatas] = useState([]);
   let [questionsDatas, setQuestionsDatas] = useState([]);
   Chart.register(ArcElement, Tooltip, Legend);
+  Chart.defaults.font.size = 10;
 
   useEffect(() => {
     getAllAnswers().then((res) => {
@@ -39,7 +40,7 @@ const Home = () => {
     questionsArray.forEach(choice => {
       let countAnswers = 0;
       allAnswers.forEach(answer => {
-        if(answer.question_id === questionId && choice.trim().toLowerCase() === answer.answers.trim().toLowerCase()){
+        if(choice.trim().toLowerCase() === answer[arrayId].answers.trim().toLowerCase()){
           countAnswers++;
         }
       });
@@ -55,6 +56,7 @@ const Home = () => {
       labels: questionsArray,
       datasets: [
         {
+          label: allQuestions[arrayId].body,
           data: answersArray,
           backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#8BC34A', '#FF9800'],
         },
@@ -81,7 +83,7 @@ const Home = () => {
     possibleAnswers.forEach(element =>{
       let count = 0;
       allAnswers.forEach(answer =>{
-        if(answer.question_id === questionId && element.trim().toLowerCase() === answer.answers.trim().toLowerCase()){
+        if(element.trim().toLowerCase() === answer[arrayId].answers.trim().toLowerCase()){
           count++;
         }
       });
@@ -95,8 +97,8 @@ const Home = () => {
         {
           label: JSON.stringify(question),
           data: countsAnswersArray,
-          backgroundColor: 'rgba(75,192,192,0.4)',
-          borderColor: 'rgba(75,192,192,1)',
+          backgroundColor: 'rgba(54, 162, 235,0.4)',
+          borderColor: '#36A2EB',
           borderWidth: 1,
         },
       ],
@@ -104,24 +106,44 @@ const Home = () => {
 
     return nextDatasets;
   }
+
+  const optionsPie = {
+    plugins: {
+      legend: {
+        display: true,
+        position: 'bottom',
+      },
+    },
+    maintainAspectRatio : false
+  };
+
+  const optionsRadar = {
+    plugins: {
+      legend: {
+        display: true,
+        position: 'top',
+      },
+    },
+    responsive: true
+  };
   
   return (
     <div role="region" className="homepage">
       <CheckAuth />
       <Navbar />
-      <div role="region">
+      <div role="region" className="content">
         <h1>Bienvenue Admin !</h1>
         {answersDatas.data && answersDatas.data.data &&
         questionsDatas.data && questionsDatas.data.data  &&(
           <ul className="charts">
-            <li><Pie data={returnPieChartsDatas(6)} key={"6"}/></li>
-            <li><Pie data={returnPieChartsDatas(7)} key={"7"}/></li>
-            <li><Pie data={returnPieChartsDatas(10)} key={"10"}/></li>
-            <li><Radar data={returnRadarChartsDatas(11)} key={"11"}/></li>
-            <li><Radar data={returnRadarChartsDatas(12)} key={"12"}/></li>
-            <li><Radar data={returnRadarChartsDatas(13)} key={"13"}/></li>
-            <li><Radar data={returnRadarChartsDatas(14)} key={"14"}/></li>
-            <li><Radar data={returnRadarChartsDatas(15)} key={"15"}/></li>
+            <li className="chart"><Pie data={returnPieChartsDatas(6)} key={"6"} options={optionsPie}/></li>
+            <li className="chart"><Pie data={returnPieChartsDatas(7)} key={"7"} options={optionsPie}/></li>
+            <li className="chart"><Pie data={returnPieChartsDatas(10)} key={"10"} options={optionsPie}/></li>
+            <li className="chart"><Radar data={returnRadarChartsDatas(11)} key={"11"} options={optionsRadar}/></li>
+            <li className="chart"><Radar data={returnRadarChartsDatas(12)} key={"12"} options={optionsRadar}/></li>
+            <li className="chart"><Radar data={returnRadarChartsDatas(13)} key={"13"} options={optionsRadar}/></li>
+            <li className="chart"><Radar data={returnRadarChartsDatas(14)} key={"14"} options={optionsRadar}/></li>
+            <li className="chart"><Radar data={returnRadarChartsDatas(15)} key={"15"} options={optionsRadar}/></li>
           </ul>
           
         )}
