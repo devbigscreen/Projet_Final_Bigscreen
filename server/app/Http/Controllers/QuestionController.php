@@ -52,7 +52,7 @@ class QuestionController extends Controller
 
 
     /**
-     * Get one question from database.
+     * Get one specified question from database.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -81,7 +81,6 @@ class QuestionController extends Controller
     public function updateQuestion(Request $request, $id): JsonResponse
     {
         $question = Question::where('question_id', $id);
-        //Debugbar::addMess
 
         $request->validate([
             'body' => 'required|string|max:255',

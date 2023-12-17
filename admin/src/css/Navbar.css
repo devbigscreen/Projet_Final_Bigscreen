@@ -12,7 +12,7 @@
   flex-flow: column;
 }
 
-.logoNoir {
+.logoBleu {
     width: 7rem;
     text-align: center;
     padding: 0;
@@ -50,7 +50,7 @@
     align-items: center;
   }
 
-  .logoNoir {
+  .logoBleu {
     padding-top: 0;
   }
 

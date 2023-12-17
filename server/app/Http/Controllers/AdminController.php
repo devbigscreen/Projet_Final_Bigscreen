@@ -38,7 +38,7 @@ class AdminController extends Controller
 
 
     /**
-     * Store a newly created user in storage.
+     * Store a newly created admin in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response

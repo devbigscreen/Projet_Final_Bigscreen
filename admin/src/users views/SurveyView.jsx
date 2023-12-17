@@ -14,6 +14,11 @@ function SurveyView() {
     });
   }, []);
 
+  /**
+   * Generates checkbox choices for a given question.
+   * @param {Object} question - The question object containing choices.
+   * @returns {JSX.Element} - The JSX element representing checkbox choices.
+   */
   function generateCheckboxChoices(question) {
     const choices = Object.values(question.choices);
     return (
@@ -29,6 +34,11 @@ function SurveyView() {
     );
   }
 
+  /**
+   * Generates text input for a given question.
+   * @param {Object} question - The question object.
+   * @returns {JSX.Element} - The JSX element representing text input.
+   */
   function generateTextInput(question) {
     if (question.question_id === 1) {
       return (
@@ -52,6 +62,11 @@ function SurveyView() {
     }
   }
 
+  /**
+   * Generates select choices for a given question.
+   * @param {Object} question - The question object.
+   * @returns {JSX.Element} - The JSX element representing select choices.
+   */
   function generateSelectChoices(question) {
     return (
       <>
@@ -73,6 +88,10 @@ function SurveyView() {
     );
   }
 
+  /**
+   * Generates an array of input elements based on question types.
+   * @returns {Array} - An array of JSX elements representing input fields.
+   */
   function generateInputsArray() {
     let inputsArray = [];
     questionsDatas.forEach((question) => {
@@ -91,6 +110,10 @@ function SurveyView() {
     return inputsArray;
   }
 
+  /**
+   * Generates an array of question data for rendering.
+   * @returns {Array} - An array of objects representing question data.
+   */
   function generateQuestionsDatasArray() {
     let questionsInputs = generateInputsArray();
     let propsDatasArray = [];

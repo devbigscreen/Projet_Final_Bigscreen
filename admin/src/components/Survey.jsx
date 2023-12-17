@@ -23,22 +23,36 @@ const Survey = (props) => {
   const [saveAnswers, setSaveAnswers] = useState([]);
   const maxSteps = steps.length;
 
+  /**
+   * Checks if the given email is valid based on a regular expression.
+   * @param {string} email - The email address to validate.
+   * @returns {boolean} - True if the email is valid, false otherwise.
+   */
   function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
     return emailRegex.test(email);
   }
 
+  /**
+   * Updates the state of saved answers for a given question ID.
+   * @param {number} questionId - The ID of the question.
+   * @param {string} inputValue - The user's input value for the question.
+   */
   const updateAnswersState = (questionId, inputValue) => {
     let newArray = [...saveAnswers];
     newArray.splice(questionId, 0, inputValue);
     setSaveAnswers(newArray);
   };
 
+  /**
+   * Handles the navigation to the next step in the questionnaire.
+   * Validates input based on question type and updates answers accordingly.
+   */
   const handleNext = () => {
     let input = document.getElementById(steps[activeStep].id);
     let span = document.getElementById("boxSpan");
     span.innerHTML = "";
+
     if (input.type === "fieldset") {
       let inputArray = input.children;
       for (let i = 1; i < inputArray.length; i++) {
@@ -64,7 +78,6 @@ const Survey = (props) => {
       if (input.value === "" || input.value === null) {
         return (span.innerHTML = "Please answer the question");
       } else {
-        console.log(input.type);
         updateAnswersState(steps[activeStep].id, input.value);
         span.innerHTML = "";
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -72,10 +85,16 @@ const Survey = (props) => {
     }
   };
 
+  /**
+   * Handles the navigation to the previous step in the questionnaire.
+   */
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
+  /**
+   * Submits the formatted answers to the database and redirect the user to his answers page.
+   */
   const submitAnswers = () => {
     let formatAnswersArray = [];
 
@@ -86,8 +105,9 @@ const Survey = (props) => {
         answers: answer,
       });
     });
+
     addUserDb(formatAnswersArray).then((response) => {
-      console.log(response);
+      window.location.href = response.data.urlDatas.url;
     });
   };
 

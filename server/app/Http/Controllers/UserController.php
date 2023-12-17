@@ -3,18 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use App\Models\UserAnswers;
 use App\Models\UserUrl;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Str;
-
-use function PHPSTORM_META\type;
 
 class UserController extends Controller
 {
     /**
-     * Show the form for creating a new resource.
+     * Add user answers and url to the database.
      *
      * @return \Illuminate\Http\Response
      */
@@ -89,7 +85,7 @@ class UserController extends Controller
 
 
     /**
-     * Get one UserAnswers rom database.
+     * Get specified user's answers from database.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response

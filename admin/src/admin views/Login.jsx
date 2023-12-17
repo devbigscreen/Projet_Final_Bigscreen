@@ -13,10 +13,20 @@ const Login = () => {
     }
   }, []);
 
+  /**
+   * Handles the change event for the login form, preventing the default behavior,
+   * extracting email and password from the form, and initiating the login process.
+   * Upon successful login, navigates to the "/home" route.
+   * @param {Event} event - The event object associated with the form change.
+   */
   const LoginHandleChange = (event) => {
     event.preventDefault();
+
+    // Extract email and password from the login form.
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
+
+    // Initiate the login process and navigate to the "/home" route upon success.
     login(email, password).then((response) => {
       navigate("/home");
     });

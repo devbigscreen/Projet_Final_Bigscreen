@@ -11,7 +11,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import QuizOutlinedIcon from "@mui/icons-material/QuizOutlined";
 import ViewListOutlinedIcon from "@mui/icons-material/ViewListOutlined";
-import logoNoir from "../images/logoNoir.png";
+import logoBleu from "../images/logobleu.png";
 
 import "../css/Navbar.css";
 import { removeTokenLocalStorage } from "../services/localStorage";
@@ -19,10 +19,18 @@ import { removeTokenLocalStorage } from "../services/localStorage";
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+
+  /**
+   * Handles the click event for a list item, setting the anchor element.
+   * @param {Event} event - The event object associated with the click.
+   */
   const handleClickListItem = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
+  /**
+   * Closes the list item menu by setting the anchor element to null.
+   */
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -60,8 +68,11 @@ export default function Navbar() {
         position="static"
         sx={{ height: "100%", backgroundColor: "#36A2EB" }}
       >
-        <Toolbar className="toolbar" sx={{ alignItems: "center", justifyContent: "center" }}>
-          <img src={logoNoir} alt="logo" className="logoNoir"/>
+        <Toolbar
+          className="toolbar"
+          sx={{ alignItems: "center", justifyContent: "center" }}
+        >
+          <img src={logoBleu} alt="logo" className="logoBleu" />
           <IconButton
             size="large"
             edge="start"
