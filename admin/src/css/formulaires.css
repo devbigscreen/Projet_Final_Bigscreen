@@ -3,14 +3,9 @@
 }
 
 .question-card {
-  /* Center the div  */
   margin: 0 auto;
-
-  /* Dimensions  */
-  width: 80%; /* Can be in percentage also. */
+  width: 80%;
   height: auto;
-
-  /* Visual  */
   background-color: gray;
   padding: 16px;
   border-radius: 16px;
@@ -37,18 +32,11 @@ li {
   font-size: 24px;
 }
 
-/* Final Results  */
-
 .final-results {
-  /* Center the div  */
   margin: 0 auto;
-
-  /* Dimensions  */
-  width: 50%; /* Can be in percentage also. */
+  width: 50%;
   height: auto;
   margin-top: 64px;
-
-  /* Visual  */
   background-color: gray;
   padding: 16px;
   border-radius: 16px;
@@ -58,7 +46,7 @@ li {
 }
 
 button {
-  background-color: red; /* Green */
+  background-color: red;
   border: none;
   color: white;
   padding: 16px 24px;

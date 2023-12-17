@@ -7,7 +7,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import '../css/AnswersList.css'
+import "../css/AnswersList.css";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -31,12 +31,14 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 export default function List(props) {
   const shouldRender =
-    (props.view === "questions" ? props.questionsDatas : props.userDatas && props.questionsDatas) !== null;
+    (props.view === "questions"
+      ? props.questionsDatas
+      : props.userDatas && props.questionsDatas) !== null;
 
   return (
     <TableContainer component={Paper}>
-      {shouldRender &&(
-        <Table sx={{ minWidth: 900, }} aria-label="customized table">
+      {shouldRender && (
+        <Table sx={{ minWidth: 900 }} aria-label="customized table">
           <TableHead>
             <TableRow>
               <StyledTableCell>N°</StyledTableCell>

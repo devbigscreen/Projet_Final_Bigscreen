@@ -3,18 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use App\Models\UserAnswers;
 use App\Models\UserUrl;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Str;
-
-use function PHPSTORM_META\type;
 
 class UserController extends Controller
 {
     /**
-     * Show the form for creating a new resource.
+     * Add user answers and url to the database.
      *
      * @return \Illuminate\Http\Response
      */
@@ -78,6 +74,14 @@ class UserController extends Controller
     {
         $usersAnswers = UserAnswers::all()->toArray();
 
+        // Check if $usersAnswers is empty
+        if (empty($usersAnswers)) {
+            return response()->json([
+                'message' => 'No user answer found.',
+                'data' => []
+            ], 404);
+        }
+
         $newArray = array_chunk($usersAnswers, 20);
 
         return response()->json([
@@ -89,7 +93,7 @@ class UserController extends Controller
 
 
     /**
-     * Get one UserAnswers rom database.
+     * Get specified user's answers from database.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -100,12 +104,12 @@ class UserController extends Controller
 
         if ($userAnswers->isEmpty()) {
             return response()->json([
-                'message' => 'UserAnswers not found!',
+                'message' => 'User answers not found!',
             ], 404);
         }
 
         return response()->json([
-            'message' => 'UserAnswers recovered!',
+            'message' => 'User answers recovered!',
             'data' => $userAnswers,
         ]);
     }
@@ -173,16 +177,16 @@ class UserController extends Controller
         $userEmail = UserAnswers::where('question_id', 1)
             ->where('answers', $email)
             ->first();
-            if ($userEmail) {
-                return response()->json([
-                    'message' => 'Email already exists!',
-                    'result' => $userEmail
-                ]);
-            } else {
-                return response()->json([
-                    'message' => 'Email does not exist.',
-                    'result' => null
-                ]);
-            }
+        if ($userEmail) {
+            return response()->json([
+                'message' => 'Email already exists!',
+                'result' => $userEmail
+            ]);
+        } else {
+            return response()->json([
+                'message' => 'Email does not exist.',
+                'result' => null
+            ]);
+        }
     }
 }

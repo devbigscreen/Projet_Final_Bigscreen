@@ -1,21 +1,18 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 const CheckAuth = () => {
+  const token = localStorage.getItem("token");
 
-const token = localStorage.getItem("token");
+  const navigate = useNavigate();
 
-const navigate = useNavigate();
+  useEffect(() => {
+    if (token === null) {
+      navigate("/");
+    }
+  }, []);
 
-useEffect(()=>{
-  if (token === null){
-  navigate("/");}
-},[])
-
-  return (
-    <></>
-  );
+  return <></>;
 };
 
 export default CheckAuth;

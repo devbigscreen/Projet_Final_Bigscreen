@@ -3,6 +3,7 @@ import "../css/AnswersList.css";
 import { useEffect, useState } from "react";
 import { getAllQuestions, getOneUserAnswers } from "../services/requests";
 import { useParams } from "react-router-dom";
+import logoNoir from "../images/logoNoir.png";
 
 const AnswersList = () => {
   let [questionsDatas, setQuestionsDatas] = useState([]);
@@ -22,17 +23,17 @@ const AnswersList = () => {
 
   return (
     <>
-    <nav className="userAnswersNav">
-      <img src="" alt="Logo" />
-      <h1>Your answers</h1>
-    </nav>
-    <section className="listUserView">
-      <List
-        questionsDatas={questionsDatas}
-        view="answers"
-        userDatas={userAnswers}
-      />
-    </section>
+      <nav className="userAnswersNav">
+        <img src={logoNoir} alt="Logo" className="logoUserAnswers" />
+        <h1>Vos réponses</h1>
+      </nav>
+      <section className="listUserView">
+        <List
+          questionsDatas={questionsDatas}
+          view="answers"
+          userDatas={userAnswers}
+        />
+      </section>
     </>
   );
 };

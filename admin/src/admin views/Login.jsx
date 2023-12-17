@@ -13,14 +13,21 @@ const Login = () => {
     }
   }, []);
 
+  /**
+   * Handles the change event for the login form, preventing the default behavior,
+   * extracting email and password from the form, and initiating the login process.
+   * Upon successful login, navigates to the "/home" route.
+   * @param {Event} event - The event object associated with the form change.
+   */
   const LoginHandleChange = (event) => {
-    console.log("click");
     event.preventDefault();
+
+    // Extract email and password from the login form.
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
-    console.log(password);
+
+    // Initiate the login process and navigate to the "/home" route upon success.
     login(email, password).then((response) => {
-      console.log(response);
       navigate("/home");
     });
   };
@@ -34,9 +41,9 @@ const Login = () => {
             <div>
               <label>Email:</label>
               <input
-                type="email1"
-                name="email1"
-                id="email1"
+                type="email"
+                name="email"
+                id="email"
                 placeholder="ex:admin@bigscreen.com"
               />
             </div>
