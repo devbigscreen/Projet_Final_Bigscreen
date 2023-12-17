@@ -17,23 +17,23 @@ class UrlSeeder extends Seeder
         $data = [
             [
                 'user_id' => 'test1',
-                'url' => 'https://www.bigscreen.com/1'
+                'url' => 'http://localhost:5173/user/answers/test1'
             ],
             [
                 'user_id' => 'test2',
-                'url' => 'https://www.bigscreen.com/2'
+                'url' => 'http://localhost:5173/user/answers/test2'
             ],
             [
                 'user_id' => 'test3',
-                'url' => 'https://www.bigscreen.com/3'
+                'url' => 'http://localhost:5173/user/answers/test3'
             ],
             [
                 'user_id' => 'test4',
-                'url' => 'https://www.bigscreen.com/4'
+                'url' => 'http://localhost:5173/user/answers/test4'
             ],
             [
                 'user_id' => 'test5',
-                'url' => 'https://www.bigscreen.com/5'
+                'url' => 'http://localhost:5173/user/answers/test5'
             ],
 
         ];

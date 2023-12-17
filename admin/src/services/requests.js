@@ -41,7 +41,9 @@ export async function getAllQuestions() {
  */
 export async function getOneUserAnswers(userId) {
   try {
-    const response = await axios.get(`${serverUrl + "/user/answers/" + userId}`);
+    const response = await axios.get(
+      `${serverUrl + "/user/answers/" + userId}`
+    );
     return response;
   } catch (error) {
     throw error;
@@ -88,4 +90,3 @@ export async function addUserDb(userAnswers) {
     throw error;
   }
 }
-

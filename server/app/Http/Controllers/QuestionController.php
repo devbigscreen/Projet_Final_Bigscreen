@@ -35,7 +35,7 @@ class QuestionController extends Controller
         ]);
     }
 
-     /**
+    /**
      * get all questions from database.
      *
      * @param  \Illuminate\Http\Request  $request

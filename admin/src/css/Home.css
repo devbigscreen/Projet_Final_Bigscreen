@@ -1,69 +1,70 @@
-body, html {
-    margin: 0;
-    padding: 0;
-  }
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
 
 .homepage {
-    display: flex;
-    flex-flow: column;
-    max-height: 100vh;
-    overflow-y: auto;
-  }
-  
-  h1 {
-    position: fixed;
-    top: 0;
-    margin: 0;
-    padding-left: 8rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #fff;
-    width: 100%;
-    z-index: 1;
-    padding: 1rem;
-  }
-  
-  .content {
-    flex: 1;
-    margin-top: 4rem; 
-  }
-  
-  .charts {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    max-width: 100%;
-    margin: auto;
-    padding-left: 8rem;
-    padding-top: 1rem;
-    padding-bottom: 2rem;
-  }
-  
+  display: flex;
+  flex-flow: column;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+h1 {
+  position: fixed;
+  top: 0;
+  margin: 0;
+  padding-left: 8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  width: 100%;
+  z-index: 1;
+  padding: 1rem;
+}
+
+.content {
+  flex: 1;
+  margin-top: 4rem;
+}
+
+.charts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 100%;
+  margin: auto;
+  padding-left: 8rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.chart {
+  width: calc(33.33% - 1rem);
+  height: 30rem;
+}
+
+li {
+  background-color: #fff !important;
+}
+
+@media screen and (max-width: 1200px) {
   .chart {
-    width: calc(33.33% - 1rem);
-    height: 30rem;
+    width: calc(50% - 1rem);
   }
+}
 
-  li{
-    background-color: #fff!important;
+@media screen and (max-width: 1100px) {
+  .charts {
+    padding-top: 4rem;
+    padding-left: 0;
   }
+}
 
-  @media screen and (max-width: 1200px) {
-    .chart {
-      width: calc(50% - 1rem);
-    }
+@media screen and (max-width: 600px) {
+  .chart {
+    width: 100%;
   }
-
-  @media screen and (max-width: 1100px){
-    .charts{
-      padding-top: 4rem;
-      padding-left: 0;
-    }
-  }
-  
-  @media screen and (max-width: 600px) {
-    .chart {
-      width: 100%;
-    }
-  }
+}

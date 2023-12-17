@@ -169,16 +169,16 @@ class UserController extends Controller
         $userEmail = UserAnswers::where('question_id', 1)
             ->where('answers', $email)
             ->first();
-            if ($userEmail) {
-                return response()->json([
-                    'message' => 'Email already exists!',
-                    'result' => $userEmail
-                ]);
-            } else {
-                return response()->json([
-                    'message' => 'Email does not exist.',
-                    'result' => null
-                ]);
-            }
+        if ($userEmail) {
+            return response()->json([
+                'message' => 'Email already exists!',
+                'result' => $userEmail
+            ]);
+        } else {
+            return response()->json([
+                'message' => 'Email does not exist.',
+                'result' => null
+            ]);
+        }
     }
 }

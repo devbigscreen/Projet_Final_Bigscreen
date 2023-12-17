@@ -7,17 +7,17 @@
   z-index: 2;
 }
 
-.toolbar{
+.toolbar {
   display: flex;
   flex-flow: column;
 }
 
 .logoBleu {
-    width: 7rem;
-    text-align: center;
-    padding: 0;
-    padding-top: 1rem;
-  }
+  width: 7rem;
+  text-align: center;
+  padding: 0;
+  padding-top: 1rem;
+}
 
 .css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
   width: 8rem;
@@ -45,7 +45,7 @@
     height: auto !important;
     flex-direction: row;
   }
-  .toolbar{
+  .toolbar {
     flex-flow: row;
     align-items: center;
   }
@@ -54,7 +54,7 @@
     padding-top: 0;
   }
 
-  .css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper{
+  .css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
     right: 0 !important;
     left: auto !important;
   }

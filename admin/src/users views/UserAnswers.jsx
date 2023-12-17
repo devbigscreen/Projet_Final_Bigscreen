@@ -23,17 +23,17 @@ const AnswersList = () => {
 
   return (
     <>
-    <nav className="userAnswersNav">
-      <img src={logoNoir} alt="Logo" className="logoNoir"/>
-      <h1>Your answers</h1>
-    </nav>
-    <section className="listUserView">
-      <List
-        questionsDatas={questionsDatas}
-        view="answers"
-        userDatas={userAnswers}
-      />
-    </section>
+      <nav className="userAnswersNav">
+        <img src={logoNoir} alt="Logo" className="logoNoir" />
+        <h1>Your answers</h1>
+      </nav>
+      <section className="listUserView">
+        <List
+          questionsDatas={questionsDatas}
+          view="answers"
+          userDatas={userAnswers}
+        />
+      </section>
     </>
   );
 };
