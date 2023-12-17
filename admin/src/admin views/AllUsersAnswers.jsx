@@ -26,7 +26,7 @@ const AnswersList = () => {
     <>
       <CheckAuth />
       <Navbar />
-      <h1>All answers</h1>
+      <h1>Liste de toutes les réponses</h1>
       <section className="list">
         {usersAnswers &&
           questionsDatas &&

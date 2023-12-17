@@ -74,6 +74,14 @@ class UserController extends Controller
     {
         $usersAnswers = UserAnswers::all()->toArray();
 
+        // Check if $usersAnswers is empty
+        if (empty($usersAnswers)) {
+            return response()->json([
+                'message' => 'No user answer found.',
+                'data' => []
+            ], 404);
+        }
+
         $newArray = array_chunk($usersAnswers, 20);
 
         return response()->json([
@@ -96,12 +104,12 @@ class UserController extends Controller
 
         if ($userAnswers->isEmpty()) {
             return response()->json([
-                'message' => 'UserAnswers not found!',
+                'message' => 'User answers not found!',
             ], 404);
         }
 
         return response()->json([
-            'message' => 'UserAnswers recovered!',
+            'message' => 'User answers recovered!',
             'data' => $userAnswers,
         ]);
     }

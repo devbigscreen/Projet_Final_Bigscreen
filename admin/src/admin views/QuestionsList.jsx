@@ -19,7 +19,7 @@ const QuestionsList = () => {
       <CheckAuth />
       <Navbar />
       <div className="list" role="region">
-        <h1>Questionnaire !</h1>
+        <h1>Liste des questions</h1>
         {questionsDatas && (
           <List questionsDatas={questionsDatas} view="questions" />
         )}

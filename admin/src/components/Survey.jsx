@@ -119,7 +119,7 @@ const Survey = (props) => {
         <div className="surAskCtner">
           <Box className="surveyTypographyTitle">
             <Typography variant="h5" sx={{ maxWidth: 480 }}>
-              Survey : Give us next iteration feedback
+              Sondage : Votre avis nous intéresse !
             </Typography>
           </Box>
           <Box className="survAsks " sx={{ maxWidth: 480, flexGrow: 1 }}>

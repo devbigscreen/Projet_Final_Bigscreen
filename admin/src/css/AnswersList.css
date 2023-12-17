@@ -35,7 +35,7 @@ h1 {
   color: #384454;
 }
 
-.logoNoir {
+.logoUserAnswers {
   width: 10rem;
   text-align: center;
   padding: 0;
@@ -84,7 +84,7 @@ h1 {
     font-size: 2.2rem !important;
   }
 
-  .logoNoir {
+  .logoUserAnswers {
     width: 8rem;
   }
 }
@@ -124,7 +124,7 @@ h1 {
     font-size: 1.8rem !important;
   }
 
-  .logoNoir {
+  .logoUserAnswers {
     width: 6rem;
   }
 }
@@ -146,7 +146,7 @@ h1 {
     font-size: 1.6rem !important;
   }
 
-  .logoNoir {
+  .logoUserAnswers {
     width: 5rem;
   }
 }
@@ -168,7 +168,7 @@ h1 {
     font-size: 1.4rem !important;
   }
 
-  .logoNoir {
+  .logoUserAnswers {
     width: 5rem;
   }
 }
@@ -190,7 +190,7 @@ h1 {
     font-size: 1.4rem !important;
   }
 
-  .logoNoir {
+  .logoUserAnswers {
     width: 4rem;
   }
 }

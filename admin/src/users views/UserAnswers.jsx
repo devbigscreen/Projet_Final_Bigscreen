@@ -24,8 +24,8 @@ const AnswersList = () => {
   return (
     <>
       <nav className="userAnswersNav">
-        <img src={logoNoir} alt="Logo" className="logoNoir" />
-        <h1>Your answers</h1>
+        <img src={logoNoir} alt="Logo" className="logoUserAnswers" />
+        <h1>Vos réponses</h1>
       </nav>
       <section className="listUserView">
         <List

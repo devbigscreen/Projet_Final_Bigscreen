@@ -165,7 +165,7 @@ const Home = () => {
       <CheckAuth />
       <Navbar />
       <div role="region" className="content">
-        <h1>Bienvenue Admin !</h1>
+        <h1>Bienvenue !</h1>
         {answersDatas.data &&
           answersDatas.data.data &&
           questionsDatas.data &&

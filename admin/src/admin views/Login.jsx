@@ -41,9 +41,9 @@ const Login = () => {
             <div>
               <label>Email:</label>
               <input
-                type="email1"
-                name="email1"
-                id="email1"
+                type="email"
+                name="email"
+                id="email"
                 placeholder="ex:admin@bigscreen.com"
               />
             </div>
