@@ -14,7 +14,7 @@ class CreateUserUrlTable extends Migration
     public function up()
     {
         Schema::create('user_url', function (Blueprint $table) {
-            $table->string('user_id', 50)->index();
+            $table->char('user_id', 50)->index();
             $table->string('url')->unique();
             $table->timestamps();
         });

@@ -16,7 +16,7 @@ class CreateUserAnswersTable extends Migration
         Schema::create('user_answers', function (Blueprint $table) {
             $table->unsignedBigInteger('answer_id');
             $table->unsignedBigInteger('question_id');
-            $table->string('user_id');
+            $table->char('user_id', 50);
             $table->text('answers');
             $table->timestamps();
 
