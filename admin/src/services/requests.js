@@ -5,6 +5,12 @@ import { removeTokenLocalStorage, setTokenLocalStorage } from "./localStorage";
 const serverUrl = "http://127.0.0.1:8000/api";
 const userUrl = "http://localhost:5173/user/answers/";
 
+function redirectMaintenance(error){
+  if(error.response.status === 503){
+    window.location.href = '/503';
+  };
+};
+
 /**
  * Retrieves all answers from the server.
  * @returns {Promise} - A promise that resolves to the server response.
@@ -15,6 +21,7 @@ export async function getAllAnswers() {
     const response = await axios.get(`${serverUrl + "/users/answers"}`);
     return response;
   } catch (error) {
+    redirectMaintenance(error);
     throw error;
   }
 }
@@ -29,6 +36,7 @@ export async function getAllQuestions() {
     const response = await axios.get(`${serverUrl + "/questions/get"}`);
     return response;
   } catch (error) {
+    redirectMaintenance(error);
     throw error;
   }
 }
@@ -46,6 +54,7 @@ export async function getOneUserAnswers(userId) {
     );
     return response;
   } catch (error) {
+    redirectMaintenance(error);
     throw error;
   }
 }
@@ -69,6 +78,7 @@ export async function login(email, password) {
     return response;
   } catch (error) {
     removeTokenLocalStorage();
+    redirectMaintenance(error);
     throw error;
   }
 }
@@ -87,6 +97,7 @@ export async function addUserDb(userAnswers) {
     });
     return response;
   } catch (error) {
+    redirectMaintenance(error);
     throw error;
   }
 }

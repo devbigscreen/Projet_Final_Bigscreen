@@ -24,3 +24,12 @@ Installation et lancement du projet :
           Il s'agit des réponses de l'utilisateur "test1", les seeders ont alimentés la base de données avec les réponses de 5 utilisateurs "test1", "test2", "test3", "test4" et "test5". Si vous voulez consulter les réponses des autres utilisateurs tests, modifiez le "test1" de l'url par celui que vous voulez parmis les 5.
 
     Si vous déployez le front sur un autre port que 5173, changez ce port avec le votre dans les urls.
+
+    4) Mise en maintenance du site :
+        - pour mettre en maintenance le site :
+            * ouvrir un terminal dans le dossier server
+            * entrer la commande : php artisan down
+        - le site est maintenant en mode maintenance, les pages admin et utilisateur redirigent ver la page 503
+        - pour quitter le mode maintenance et remettre le site en ligne :
+            * ouvrir un terminal dans le dossier server
+            * entrer la commande : php artisan up

@@ -6,6 +6,7 @@ import QuestionsList from './admin views/QuestionsList';
 import AnswersList from './users views/UserAnswers';
 import SurveyView from './users views/SurveyView';
 import AllUsersAnswers from './admin views/AllUsersAnswers';
+import MaintenancePage from './errors/MaintenancePage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path='/user/answers/:id' element={<AnswersList/>}/>
             <Route path='/survey' element={<SurveyView/>}/>
             <Route path='/admin/all/answers' element={<AllUsersAnswers/>}/>
+            <Route path='/503' element={<MaintenancePage/>} />
           </Routes>
         </BrowserRouter> 
       
