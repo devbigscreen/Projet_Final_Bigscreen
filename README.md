@@ -29,7 +29,7 @@ Installation et lancement du projet :
         - pour mettre en maintenance le site :
             * ouvrir un terminal dans le dossier server
             * entrer la commande : php artisan down
-        - le site est maintenant en mode maintenance, les pages admin et utilisateur redirigent ver la page 503
+        - le site est maintenant en mode maintenance, les pages admin et utilisateur redirigent vers la page 503
         - pour quitter le mode maintenance et remettre le site en ligne :
             * ouvrir un terminal dans le dossier server
             * entrer la commande : php artisan up
